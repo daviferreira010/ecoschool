@@ -1,0 +1,565 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
+}
+
+
+@font-face {
+    font-family: 'Bommer';
+    src: url('../fonts/Bommer Sans Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 700;
+}
+.navbar{
+  width:100%;
+  min-height:82px;
+  background:#fff;
+  border-bottom:1px solid #e5e7eb;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 40px;
+  gap:40px;
+
+  box-sizing:border-box;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+}
+
+.logo-icon img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+  display:block;
+}
+
+.logo-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text h1{
+    margin: 0;
+    line-height: 1;
+}
+
+.logo-text span{
+    margin: 0;
+    line-height: 1;
+}
+
+.logo-text h1{
+    margin: 0;
+}
+
+.logo-text span{
+    margin: 0;
+}
+
+.green-text{
+  color:#16a34a;
+}
+
+.blue-text{
+  color:#2563eb;
+
+}
+
+.logo-text{
+    position: relative;
+}
+
+.logo-bg{
+    position: absolute;
+
+    top: -15px;
+    left: -20px;
+
+    width: 70px;
+
+    opacity: 0.15;
+
+    z-index: 0;
+}
+
+.logo-text h1,
+.logo-text span{
+    position: relative;
+    z-index: 1;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    margin: 0 auto;
+    padding: 0;
+}
+.nav-links a{
+  text-decoration:none;
+  color:#111827;
+  font-weight:500;
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:#16a34a;
+}
+
+.nav-links .active{
+  color:#16a34a;
+}
+
+.nav-buttons{
+    display:flex;
+    gap:14px;
+    flex-shrink:0;
+}
+
+.btn{
+  height:44px;
+  padding:0 28px;
+  border-radius:12px;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+  transition:.2s;
+  font-size:15px;
+}
+
+.btn-outline{
+  background:#fff;
+  border:2px solid #16a34a;
+  color:#16a34a;
+}
+
+.btn-outline:hover{
+  background:#f0fdf4;
+}
+
+.btn-primary{
+  background:#16a34a;
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:#15803d;
+}
+
+.logo-text h1{
+  font-size:34px;
+  line-height:1;
+  font-weight:700;
+}
+
+.logo-text span{
+    margin: 0;
+    line-height: 1;
+}
+
+@media(max-width:1200px){
+
+  .cards-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    height:auto;
+    gap:20px;
+    padding:20px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+  }
+
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-title{
+    font-size:34px;
+  }
+
+}
+
+.logo-text h1{
+    font-family:'Bommer', sans-serif;
+    font-size:38px !important;
+    line-height:1 !important;
+    font-weight:700;
+
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.logo-text h1 .green-text,
+.logo-text h1 .blue-text{
+    font-size:38px !important;
+}
+
+.logo-text h1 .green-text{
+    margin-right:0;
+}
+
+
+
+
+/* ============================
+   CENTRALIZAÇÃO DA NAVBAR
+   ============================ */
+
+.navbar {
+    position: relative;
+}
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+/* =========================================================
+   FONTE DO MENU - PADRÃO ECOSCHOOL
+   ========================================================= */
+
+.navbar .nav-links a {
+    font-family: "Inter", sans-serif !important;
+    font-weight: 500 !important;
+}
+
+/* =========================================================
+   MODO ESCURO — ECOSCHOOL
+========================================================= */
+
+html.dark-mode body {
+    background: #07110d !important;
+    color: #f8fafc;
+}
+
+body.dark-mode {
+    background: #07110d !important;
+    color: #f8fafc;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+html.dark-mode .navbar {
+    background: #0b1713 !important;
+    border-bottom-color: rgba(255,255,255,.08);
+}
+
+body.dark-mode .nav-links a {
+    color: #e2e8f0 !important;
+}
+
+body.dark-mode .nav-links a:hover,
+body.dark-mode .nav-links .active {
+    color: #22c55e !important;
+}
+
+
+/* =========================================================
+   BOTÃO DO TEMA
+========================================================= */
+
+.theme-toggle {
+    position: relative;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dbe3ea;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #0f172a;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        transform .2s ease;
+
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BOTÃO NO MODO ESCURO
+========================================================= */
+
+body.dark-mode .theme-toggle {
+    background: #14231d;
+    border-color: rgba(255,255,255,.12);
+    color: #facc15;
+}
+
+
+/* =========================================================
+   CARDS CLAROS
+========================================================= */
+
+body.dark-mode .hero-card,
+body.dark-mode .home-card,
+body.dark-mode .about,
+body.dark-mode .my-school-card,
+body.dark-mode .school-highlight,
+body.dark-mode .season-card,
+body.dark-mode .season,
+body.dark-mode .ranking-item,
+body.dark-mode .ranking-school-item,
+body.dark-mode .ranking-section-title,
+body.dark-mode .ranking-empty,
+body.dark-mode .podium-card,
+body.dark-mode .school-stat,
+body.dark-mode .student-summary > div,
+body.dark-mode .info-card,
+body.dark-mode .stats-card,
+body.dark-mode .perfil-card,
+body.dark-mode .footer {
+    background: #101c18 !important;
+    color: #f8fafc;
+    border-color: rgba(255,255,255,.08) !important;
+}
+
+
+/* =========================================================
+   TEXTOS
+========================================================= */
+
+body.dark-mode .hero-card h2,
+body.dark-mode .home-card h3,
+body.dark-mode .about h2,
+body.dark-mode .my-school-information h2,
+body.dark-mode .ranking-section-title h2,
+body.dark-mode .podium-card h3,
+body.dark-mode .rank-info strong,
+body.dark-mode .school-stat strong,
+body.dark-mode .info-card h2,
+body.dark-mode .stats-card h2,
+body.dark-mode .perfil-card h1 {
+    color: #f8fafc;
+}
+
+body.dark-mode .hero-card p,
+body.dark-mode .home-card p,
+body.dark-mode .about p,
+body.dark-mode .my-school-information p,
+body.dark-mode .rank-info span,
+body.dark-mode .school-stat span,
+body.dark-mode .footer p,
+body.dark-mode .footer > .footer-content > span {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   IMPACTO
+========================================================= */
+
+body.dark-mode .impact {
+    background: #0c1814 !important;
+}
+
+body.dark-mode .impact p {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   INPUTS / FORMULÁRIOS
+========================================================= */
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #101c18 !important;
+    color: #f8fafc !important;
+    border-color: rgba(255,255,255,.12) !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   LISTAS E ÁREAS BRANCAS
+========================================================= */
+
+body.dark-mode .number-card,
+body.dark-mode .form-card,
+body.dark-mode .next-card,
+body.dark-mode .calendar-card,
+body.dark-mode .confirm-card,
+body.dark-mode .collection-card {
+    background: #101c18 !important;
+    color: #f8fafc;
+    border-color: rgba(255,255,255,.08) !important;
+}
+
+
+/* =========================================================
+   RANKING
+========================================================= */
+
+body.dark-mode .ranking-item.current {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,169,87,.16),
+            #101c18
+        ) !important;
+}
+
+body.dark-mode .ranking-subtitle {
+    color: #94a3b8;
+}
+
+body.dark-mode .ranking-title {
+    color: white;
+}
+
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+body.dark-mode .info-item {
+    background: #14231d !important;
+    border-color: rgba(255,255,255,.08) !important;
+}
+
+body.dark-mode .info-item span {
+    color: #94a3b8;
+}
+
+body.dark-mode .info-item strong {
+    color: #f8fafc;
+}
+
+body.dark-mode .stat-box {
+    background: #14231d !important;
+    border-color: rgba(255,255,255,.08) !important;
+}
+
+body.dark-mode .stat-box span {
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+body.dark-mode .footer {
+    background: #08120f !important;
+}
+
+body.dark-mode .footer-logo span {
+    color: white;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+body.dark-mode .btn-outline {
+    background: #101c18 !important;
+    color: #22c55e !important;
+}
+
+body.dark-mode .btn-outline:hover {
+    background: #142a20 !important;
+}
+
+
+
+
+/* =========================================================
+   RESPONSIVO — CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: auto;
+        padding: 12px 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .logo-icon img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .logo-text h1,
+    .logo-text h1 .green-text,
+    .logo-text h1 .blue-text {
+        font-size: 27px !important;
+    }
+
+    .nav-links {
+        position: static;
+        transform: none;
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        margin-left: auto;
+    }
+}

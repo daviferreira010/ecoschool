@@ -1,0 +1,1737 @@
+@font-face {
+
+    font-family: "Bommer Sans";
+
+    src: url("../fonts/Bommer Sans Bold.ttf")
+        format("truetype");
+
+    font-weight: 700;
+
+    font-style: normal;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    color: #0f172a;
+
+}
+
+
+/* =========================================================
+   PÁGINA
+========================================================= */
+
+.ranking-page {
+
+    width: min(1180px, calc(100% - 40px));
+
+    margin: 45px auto 80px;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.ranking-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.ranking-title-area {
+
+    max-width: 700px;
+
+}
+
+
+.ranking-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color: #4ade80;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.ranking-title {
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: clamp(45px, 6vw, 70px);
+
+    line-height: .95;
+
+    letter-spacing: -3px;
+
+    color: white;
+
+}
+
+
+.ranking-title span {
+
+    background: linear-gradient(
+        90deg,
+        #00b86b,
+        #168ee5
+    );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+.ranking-subtitle {
+
+    margin-top: 14px;
+
+    color: #cbd5e1;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   TEMPORADA
+========================================================= */
+
+.season-card {
+
+    min-width: 210px;
+
+    padding: 18px 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.96);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.18);
+
+}
+
+
+.season-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #08a957,
+        #168ee5
+    );
+
+    color: white;
+
+    font-size: 18px;
+
+}
+
+
+.season-card span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.season-card strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 20px;
+
+    color: #0f172a;
+
+}
+
+
+.season-card small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #16a34a;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   MINHA ESCOLA
+========================================================= */
+
+.my-school-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 26px;
+
+    margin-bottom: 25px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.98),
+            rgba(240,253,247,.96)
+        );
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.18);
+
+}
+
+
+.my-school-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    right: -120px;
+
+    top: -150px;
+
+    border-radius: 50%;
+
+    background: rgba(8,169,87,.10);
+
+}
+
+
+.my-school-top {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+.small-label {
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.4px;
+
+}
+
+
+.my-school-information h2 {
+
+    margin-top: 4px;
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 28px;
+
+    color: #0f172a;
+
+}
+
+
+.my-school-information p {
+
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+.my-school-information p i {
+
+    color: #08a957;
+
+    margin-right: 5px;
+
+}
+
+
+.my-school-position {
+
+    min-width: 160px;
+
+    padding: 15px 20px;
+
+    text-align: center;
+
+    border-radius: 17px;
+
+    background: linear-gradient(
+        135deg,
+        #08a957,
+        #168ee5
+    );
+
+    color: white;
+
+}
+
+
+.my-school-position span {
+
+    display: block;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    opacity: .85;
+
+}
+
+
+.my-school-position strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 35px;
+
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.school-stats {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.school-stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    border-radius: 15px;
+
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+}
+
+
+.stat-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #ecfdf5;
+
+    color: #08a957;
+
+}
+
+
+.school-stat span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: .8px;
+
+}
+
+
+.school-stat strong {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color: #08a957;
+
+    font-size: 21px;
+
+    font-weight: 900;
+
+}
+
+
+/* =========================================================
+   ABAS
+========================================================= */
+
+.ranking-tabs {
+
+    width: fit-content;
+
+    min-width: 500px;
+
+    margin: 0 auto 25px;
+
+    padding: 5px;
+
+    display: flex;
+
+    border-radius: 16px;
+
+    background: rgba(15,23,42,.82);
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.18);
+
+}
+
+
+.ranking-tab {
+
+    min-width: 160px;
+
+    padding: 12px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+}
+
+
+.ranking-tab:hover {
+
+    color: white;
+
+    background: rgba(255,255,255,.06);
+
+}
+
+
+.ranking-tab.active {
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #08a957,
+        #168ee5
+    );
+
+    box-shadow:
+        0 6px 18px rgba(8,169,87,.25);
+
+}
+
+
+/* =========================================================
+   TÍTULO DA SEÇÃO
+========================================================= */
+
+.ranking-section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    padding: 17px 20px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.95);
+
+}
+
+
+.ranking-section-title span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.3px;
+
+}
+
+
+.ranking-section-title h2 {
+
+    margin-top: 3px;
+
+    color: #0f172a;
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 21px;
+
+}
+
+
+.ranking-section-title-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border-radius: 0;
+}
+
+.ranking-section-title-icon img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   PÓDIO
+========================================================= */
+
+.podium {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.08fr 1fr;
+
+    gap: 15px;
+
+    align-items: end;
+
+    margin-bottom: 18px;
+
+}
+
+
+.podium-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 205px;
+
+    padding: 25px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.97);
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.12);
+
+    transition: .25s ease;
+
+}
+
+
+.podium-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.podium-card.first {
+
+    min-height: 235px;
+
+    border: 2px solid rgba(8,169,87,.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #effcf6
+        );
+
+}
+
+
+.podium-card.second {
+
+    border-top: 4px solid #94a3b8;
+
+}
+
+
+.podium-card.third {
+
+    border-top: 4px solid #d99a32;
+
+}
+
+
+.podium-place {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 8px;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    font-weight: 900;
+
+}
+
+
+.podium-card.first .podium-place {
+
+    width: 50px;
+
+    height: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #08a957,
+        #168ee5
+    );
+
+    color: white;
+
+}
+
+
+.podium-medal {
+
+    color: #f0b429;
+
+    font-size: 18px;
+
+}
+
+
+.podium-card h3 {
+
+    max-width: 280px;
+
+    margin: 8px 0 4px;
+
+    color: #0f172a;
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.3;
+
+}
+
+
+.podium-card small {
+
+    color: #64748b;
+
+    font-size: 11px;
+
+}
+
+
+.podium-points {
+
+    margin-top: 10px;
+
+    color: #08a957;
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 27px;
+
+}
+
+
+.podium-points span {
+
+    color: #64748b;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   LISTA
+========================================================= */
+
+.ranking-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+
+.ranking-item {
+
+    min-height: 68px;
+
+    padding: 10px 17px;
+
+    display: grid;
+
+    grid-template-columns:
+        40px
+        44px
+        1fr
+        auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,.96);
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 5px 16px rgba(15,23,42,.06);
+
+    transition: .2s ease;
+
+}
+
+
+.ranking-item:hover {
+
+    transform: translateY(-2px);
+
+    border-color: rgba(8,169,87,.3);
+
+}
+
+
+.ranking-item.current {
+
+    border: 2px solid rgba(8,169,87,.45);
+
+    background:
+        linear-gradient(
+            90deg,
+            #effcf6,
+            white
+        );
+
+}
+
+
+.rank-number {
+
+    color: #64748b;
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 17px;
+
+}
+
+
+.rank-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #ecfdf5;
+
+    color: #08a957;
+
+}
+
+
+.rank-info {
+
+    min-width: 0;
+
+}
+
+
+.rank-info strong {
+
+    display: block;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+}
+
+
+.rank-info span {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+}
+
+
+.rank-points {
+
+    text-align: right;
+
+}
+
+
+.rank-points strong {
+
+    display: block;
+
+    color: #08a957;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+}
+
+
+.rank-points span {
+
+    color: #94a3b8;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .7px;
+
+}
+
+
+/* =========================================================
+   FOTO DOS ALUNOS
+========================================================= */
+
+.student-photo {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #e2e8f0;
+
+}
+
+
+.ranking-item.current .student-photo {
+
+    border-color: #08a957;
+
+}
+
+
+.student-rank-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+}
+
+
+.student-text {
+
+    min-width: 0;
+
+}
+
+
+.you-badge {
+
+    display: inline-block;
+
+    margin-left: 6px;
+
+    padding: 3px 6px;
+
+    border-radius: 5px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 8px;
+
+    font-weight: 900;
+
+    vertical-align: middle;
+
+}
+
+
+/* =========================================================
+   AVISO VAZIO
+========================================================= */
+
+.ranking-empty {
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.96);
+
+}
+
+
+.ranking-empty i {
+
+    margin-bottom: 12px;
+
+    color: #08a957;
+
+    font-size: 32px;
+
+}
+
+
+.ranking-empty h3 {
+
+    margin-bottom: 5px;
+
+    color: #0f172a;
+
+}
+
+
+.ranking-empty p {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    margin-top: 70px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: rgba(248,250,252,.97);
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.footer-logo img {
+
+    width: 40px;
+
+    height: 40px;
+
+    object-fit: contain;
+
+}
+
+
+.footer-logo span {
+
+    font-family: "Bommer Sans", sans-serif;
+
+    font-size: 21px;
+
+}
+
+
+.footer p {
+
+    margin-bottom: 10px;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+}
+
+
+.footer > .footer-content > span {
+
+    color: #94a3b8;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .ranking-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .season-card {
+
+        width: 100%;
+
+    }
+
+
+    .my-school-top {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .my-school-position {
+
+        width: 100%;
+
+    }
+
+
+    .school-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .podium {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .podium-card.first {
+
+        order: -1;
+
+    }
+
+
+    .ranking-tabs {
+
+        width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+    .ranking-tab {
+
+        min-width: 0;
+
+        flex: 1;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .ranking-page {
+
+        width: calc(100% - 24px);
+
+        margin-top: 30px;
+
+    }
+
+
+    .ranking-title {
+
+        font-size: 43px;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .my-school-card {
+
+        padding: 20px;
+
+    }
+
+
+    .my-school-information h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .ranking-item {
+
+        grid-template-columns:
+            30px
+            42px
+            1fr
+            auto;
+
+        gap: 8px;
+
+        padding: 9px 10px;
+
+    }
+
+
+    .rank-info strong {
+
+        font-size: 12px;
+
+    }
+
+
+    .rank-points strong {
+
+        font-size: 13px;
+
+    }
+
+
+    .student-photo {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+}
+
+/* =========================================================
+   RANKING — RESPONSIVO PARA CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .ranking-container,
+    .ranking-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 14px;
+    }
+
+    .ranking-header {
+        padding: 25px 16px;
+        text-align: center;
+    }
+
+    .ranking-title {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .ranking-subtitle {
+        font-size: 14px;
+    }
+
+    .ranking-tabs {
+        width: 100%;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .tab-ranking {
+        flex: 0 0 auto;
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    .ranking-section-title {
+        padding: 18px 16px;
+    }
+
+    .ranking-section-title h2 {
+        font-size: 22px;
+    }
+
+    .ranking-school-item,
+    .ranking-item {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .rank-position {
+        min-width: 32px;
+        font-size: 14px;
+    }
+
+    .rank-info {
+        min-width: 0;
+    }
+
+    .rank-info strong {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    .rank-info span {
+        font-size: 12px;
+    }
+
+    .podium-card {
+        width: 100%;
+        padding: 18px 14px;
+    }
+
+    .student-summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .student-photo {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+/* =========================================================
+   TEMPORADA — MODO ESCURO
+========================================================= */
+
+html.dark-mode .season-card strong,
+body.dark-mode .season-card strong {
+    color: #f8fafc !important;
+}
+
+html.dark-mode .season-card > div > span,
+body.dark-mode .season-card > div > span {
+    color: #94a3b8 !important;
+}
+
+html.dark-mode .season-card small,
+body.dark-mode .season-card small {
+    color: #22c55e !important;
+}
+
+/* =========================================================
+   RANKING DE TURMAS — VISUAL
+========================================================= */
+
+.ranking-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ranking-school-item {
+    width: 100%;
+    min-height: 92px;
+    padding: 18px 22px;
+
+    display: grid;
+    grid-template-columns: 42px 48px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 16px;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.ranking-school-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(22, 163, 74, 0.35);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   POSIÇÃO
+========================================================= */
+
+.rank-number {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f5f9;
+    color: #334155;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
+
+.rank-school-icon {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #ecfdf5;
+    color: #16a34a;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   INFORMAÇÕES DA TURMA
+========================================================= */
+
+.rank-school-info {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.rank-school-info strong {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    color: #111827;
+
+    font-size: 17px;
+    font-weight: 800;
+
+    line-height: 1.25;
+}
+
+.rank-school-info span {
+    color: #64748b;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   PONTOS
+========================================================= */
+
+.rank-points {
+    min-width: 95px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+
+    text-align: right;
+}
+
+.rank-points strong {
+    color: #16a34a;
+
+    font-size: 22px;
+    font-weight: 900;
+
+    line-height: 1;
+}
+
+.rank-points span {
+    margin-top: 5px;
+
+    color: #64748b;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   VOCÊ
+========================================================= */
+
+.voce-badge {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 8px !important;
+
+    background: #dcfce7 !important;
+    color: #15803d !important;
+
+    border-radius: 999px;
+
+    font-size: 10px !important;
+    font-weight: 800 !important;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MODO ESCURO
+========================================================= */
+
+html.dark-mode .ranking-school-item,
+body.dark-mode .ranking-school-item {
+    background: #101c18 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+}
+
+html.dark-mode .ranking-school-item:hover,
+body.dark-mode .ranking-school-item:hover {
+    border-color: rgba(34, 197, 94, 0.35) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+html.dark-mode .rank-number,
+body.dark-mode .rank-number {
+    background: #14231d !important;
+    color: #e2e8f0 !important;
+}
+
+html.dark-mode .rank-school-icon,
+body.dark-mode .rank-school-icon {
+    background: rgba(34, 197, 94, 0.12) !important;
+    color: #22c55e !important;
+}
+
+html.dark-mode .rank-school-info strong,
+body.dark-mode .rank-school-info strong {
+    color: #f8fafc !important;
+}
+
+html.dark-mode .rank-school-info span,
+body.dark-mode .rank-school-info span {
+    color: #94a3b8 !important;
+}
+
+html.dark-mode .rank-points strong,
+body.dark-mode .rank-points strong {
+    color: #22c55e !important;
+}
+
+html.dark-mode .rank-points span,
+body.dark-mode .rank-points span {
+    color: #94a3b8 !important;
+}
+
+html.dark-mode .voce-badge,
+body.dark-mode .voce-badge {
+    background: rgba(34, 197, 94, 0.15) !important;
+    color: #4ade80 !important;
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .ranking-school-item {
+        grid-template-columns: 34px 42px minmax(0, 1fr);
+        gap: 12px;
+
+        padding: 14px;
+    }
+
+    .rank-number {
+        width: 32px;
+        height: 32px;
+
+        font-size: 14px;
+    }
+
+    .rank-school-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .rank-school-info strong {
+        font-size: 15px;
+    }
+
+    .rank-school-info span {
+        font-size: 12px;
+    }
+
+    .rank-points {
+        grid-column: 3;
+        align-items: flex-start;
+        text-align: left;
+
+        margin-top: 2px;
+    }
+
+    .rank-points strong {
+        font-size: 19px;
+    }
+}

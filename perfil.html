@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<script>
+    if (localStorage.getItem("ecoSchoolTema") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfil | Eco School</title>
+
+    <link rel="icon" type="image/png" href="img/minhalogo.png">
+
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/perfil.css">
+    <link rel="stylesheet" href="./css/background.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="eco-system">
+
+    <canvas id="eco-network"></canvas>
+
+    <div class="eco-aurora aurora-green"></div>
+    <div class="eco-aurora aurora-blue"></div>
+    <div class="eco-aurora aurora-light"></div>
+
+    <div class="eco-icon icon-1">♻</div>
+    <div class="eco-icon icon-2">🌱</div>
+    <div class="eco-icon icon-3">🍃</div>
+    <div class="eco-icon icon-4">🗑</div>
+
+</div>
+
+
+<header class="navbar">
+
+
+  <div class="logo">
+
+    <div class="logo-icon">
+        <img src="./img/minhalogo.png" alt="Logo">
+    </div>
+
+
+       <div class="logo-text">
+    
+        <h1>
+            <span class="green-text">Eco</span>
+            <span class="blue-text">School</span>
+        </h1>
+
+        <span>RECICLE. PONTUE. GANHE.</span>
+
+    </div>
+
+</div>
+
+
+<ul class="nav-links">
+
+        <li><a href="index.html">Início</a></li>
+
+        <li><a href="ranking.html">Ranking</a></li>
+
+        <li><a href="coletas.html">Coletas</a></li>
+
+        <li><a href="perfil.html" class="active">Perfil</a></li>
+
+    </ul>
+
+
+
+
+</header>
+
+
+
+<main class="perfil-page">
+
+
+    <section class="perfil-card">
+
+
+    <div class="perfil-photo">
+
+    <div class="foto-container">
+        <img id="fotoPerfil" src="" alt="Foto de perfil">
+
+        <label for="inputFoto" class="foto-overlay">
+            <i class="fa-solid fa-camera"></i>
+            <span>Alterar foto</span>
+        </label>
+    </div>
+
+    <input type="file" id="inputFoto" accept="image/*">
+
+    <button type="button" id="removerFoto" class="btn-remover-foto">
+        <i class="fa-solid fa-trash"></i>
+        Remover foto
+    </button>
+
+</div>
+        <div>
+
+    <h1 id="perfilNome">
+        Nome do Aluno
+    </h1>
+
+    <p id="perfilEscola">
+        Aluno • Escola
+    </p>
+
+</div>
+
+    </section>
+
+
+
+    <section class="perfil-grid">
+
+
+
+        <div class="info-card">
+
+    <h2>
+        <i class="fa-solid fa-id-card"></i>
+        Informações Pessoais
+    </h2>
+
+    <div class="info-item">
+
+        <span>Nome</span>
+
+        <strong id="infoNome">
+            Nome do Aluno
+        </strong>
+
+    </div>
+
+    <div class="info-item">
+
+        <span>CPF</span>
+
+        <strong id="infoCpf">
+            000.000.000-00
+        </strong>
+
+    </div>
+
+    <div class="info-item">
+
+        <span>Escola</span>
+
+        <strong id="infoEscola">
+            Escola
+        </strong>
+
+    </div>
+
+    <div class="info-item">
+
+        <span>Turma</span>
+
+        <strong id="infoTurma">
+            Turma
+        </strong>
+
+    </div>
+
+</div>
+
+
+        <div class="stats-card">
+
+
+            <h2>
+                <i class="fa-solid fa-chart-line"></i>
+                Estatísticas
+            </h2>
+
+
+
+            <div class="stat-box">
+
+
+                <i class="fa-solid fa-recycle"></i>
+
+                <div>
+
+                    <span>Reciclagens realizadas</span>
+
+                   <strong id="perfilColetas">0</strong>
+
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="stat-box">
+
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <div>
+
+                    <span>Pontos acumulados</span>
+
+                    <strong id="perfilPontos">0</strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="stat-box">
+
+
+                <i class="fa-solid fa-calendar"></i>
+
+                <div>
+
+                    <span>Última coleta</span>
+
+                   <strong id="perfilUltimaColeta">Nenhuma</strong>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+ </section>
+
+<button class="btn-sair" onclick="logout()">
+    <i class="fa-solid fa-right-from-bracket"></i>
+    Sair da conta
+</button>
+
+</main>
+
+<!-- MODAL DE ATUALIZAÇÃO -->
+
+
+
+
+       
+
+</div>
+<script src="./js/dados.js"></script>
+<script src="./js/background.js"></script>
+<script src="./js/perfil.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/auth.js"></script>
+<script src="./js/protecao.js"></script>
+
+<footer class="footer">
+    <div class="footer-content">
+
+      <div class="footer-logo">
+    <img src="./img/minhalogo.png" alt="Eco School">
+    <span>
+        <b class="green-text">Eco</b><b class="blue-text">School</b>
+    </span>
+</div>
+        <p>
+            Transformando escolas em comunidades sustentáveis.
+        </p>
+
+        <span>
+            © 2026 Eco School. Todos os direitos reservados.
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

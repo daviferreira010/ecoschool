@@ -1,0 +1,1131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 40%,
+            #008f47,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            #062b38,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            120deg,
+            #006b35,
+            #00351f,
+            #050a0b
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PÁGINA
+========================= */
+
+.login-page {
+
+    min-height: 100vh;
+
+    width: 1200px;
+    max-width: 100%;
+
+    margin: auto;
+
+    padding: 45px 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 500px;
+
+    align-items: center;
+
+    gap: 70px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   LADO ESQUERDO
+========================= */
+
+.presentation {
+
+    color: white;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.badge {
+
+    display: inline-block;
+
+    padding: 10px 17px;
+
+    border-radius: 30px;
+
+    border: 1px solid
+        rgba(255,255,255,.3);
+
+    background:
+        rgba(0,0,0,.15);
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+}
+
+
+.presentation h1 {
+
+    font-size: 55px;
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+.presentation h1 span {
+
+    color: #00c96b;
+}
+
+
+.presentation p {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255,255,255,.75);
+
+    max-width: 550px;
+}
+
+
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
+.stats {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.stat-card {
+
+    width: 145px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(250,255,252,.95);
+
+    text-align: center;
+
+    color: #111;
+}
+
+.stat-card strong {
+
+    display: block;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    color: #00a85f;
+}
+
+.stat-card span {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+
+    background:
+        rgba(250,252,251,.98);
+
+    border-radius: 28px;
+
+    padding: 40px 45px 27px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35);
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+}
+
+.logo-icon img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+    display: block;
+}
+.logo-name {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 29px;
+
+    font-weight: bold;
+
+    letter-spacing: -1px;
+}
+
+.logo-name span {
+
+    color: #00a85f;
+}
+
+.logo-name {
+
+    color: #2563eb;
+}
+
+.logo small {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1.7px;
+
+    color: #333;
+}
+
+
+/* =========================
+   BEM VINDO
+========================= */
+
+.welcome {
+
+    margin-bottom: 27px;
+}
+
+.welcome h2 {
+
+    font-size: 29px;
+
+    margin-bottom: 7px;
+}
+
+.welcome h2 span {
+
+    color: #009e59;
+}
+
+.welcome p {
+
+    font-family: Arial, sans-serif;
+
+    color: #707875;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+form label,
+.modal-card label {
+
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.input-container {
+
+    position: relative;
+
+    margin-bottom: 6px;
+}
+
+.input-container > span {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    color: #7b8580;
+
+    font-family: Arial, sans-serif;
+}
+
+.input-container input {
+
+    width: 100%;
+
+    height: 53px;
+
+    border: 1px solid #dce3df;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    padding:
+        0 43px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+.input-container input:focus {
+
+    border-color: #00b968;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(0,185,104,.1);
+}
+
+.help {
+
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    color: #89928e;
+
+    margin-bottom: 17px;
+}
+
+.show-password {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #777;
+}
+
+
+/* =========================
+   OPÇÕES
+========================= */
+
+.login-options {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin: 15px 0 20px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+}
+
+.login-options label {
+
+    display: flex;
+
+    gap: 6px;
+
+    align-items: center;
+
+    font-weight: normal;
+
+    margin: 0;
+}
+
+.login-options input {
+
+    accent-color: #00b968;
+}
+
+.login-options button {
+
+    border: none;
+
+    background: none;
+
+    color: #009e59;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BOTÃO ENTRAR
+========================= */
+
+.btn-entrar {
+
+    width: 100%;
+
+    height: 53px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00b968,
+            #00a65c
+        );
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    box-shadow:
+        0 7px 18px
+        rgba(0,185,104,.2);
+}
+
+.btn-entrar:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================
+   DIVISOR
+========================= */
+
+.divider {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 20px 0;
+
+    font-family: Arial, sans-serif;
+
+    color: #9ba39f;
+
+    font-size: 11px;
+}
+
+.divider::before,
+.divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    background: #e4e8e6;
+
+    flex: 1;
+}
+
+
+/* =========================
+   GOOGLE
+========================= */
+
+.google-button {
+
+    width: 100%;
+
+    height: 49px;
+
+    border-radius: 10px;
+
+    border: 1px solid #dce2df;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    color: #303634;
+}
+
+.google-button strong {
+
+    color: #4285f4;
+
+    margin-right: 8px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   CADASTRO
+========================= */
+
+.register {
+
+    border-top:
+        1px solid #e6eae8;
+
+    margin-top: 20px;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    color: #727b77;
+}
+
+.register p {
+
+    display: inline;
+}
+
+.register button {
+
+    border: none;
+
+    background: transparent;
+
+    color: #009e59;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-left: 5px;
+}
+
+
+/* =========================
+   VALORES
+========================= */
+
+.values {
+
+    border-top:
+        1px solid #e6eae8;
+
+    margin-top: 20px;
+
+    padding-top: 16px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    color: #77807c;
+}
+
+
+/* =========================
+   ELEMENTOS DO FUNDO
+========================= */
+
+.floating-items {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    opacity: .25;
+}
+
+.floating-items span {
+
+    position: absolute;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+
+    animation: floatEmoji 8s ease-in-out infinite;
+
+    opacity: .7;
+}
+
+
+.floating-items span:nth-child(1) {
+    left: 5%;
+    top: 20%;
+}
+
+.floating-items span:nth-child(2) {
+    left: 17%;
+    top: 75%;
+}
+
+.floating-items span:nth-child(3) {
+    left: 27%;
+    top: 35%;
+}
+
+.floating-items span:nth-child(4) {
+    left: 40%;
+    top: 85%;
+}
+
+.floating-items span:nth-child(5) {
+    left: 52%;
+    top: 13%;
+}
+
+.floating-items span:nth-child(6) {
+    left: 67%;
+    top: 80%;
+}
+
+.floating-items span:nth-child(7) {
+    left: 84%;
+    top: 30%;
+}
+
+.floating-items span:nth-child(8) {
+    left: 94%;
+    top: 70%;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,20,10,.7);
+
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+
+    display: flex;
+}
+
+.modal-card {
+
+    position: relative;
+
+    width: 500px;
+
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #fafcfb;
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.35);
+}
+
+.fechar {
+
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    width: 33px;
+    height: 33px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #edf1ef;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.modal-icon {
+
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #ddffed;
+
+    color: #00a85f;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+
+    margin-bottom: 17px;
+}
+
+.modal-card h2 {
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+.modal-card > div > p {
+
+    font-family: Arial, sans-serif;
+
+    color: #707a76;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+.hidden {
+
+    display: none;
+}
+
+
+/* =========================
+   OPÇÃO ESTUDANTE
+========================= */
+
+.student-option {
+
+    width: 100%;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    text-align: left;
+
+    border: 1px solid #dce3df;
+
+    border-radius: 13px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+.student-option:hover {
+
+    border-color: #00b968;
+
+    background: #f2fff8;
+}
+
+.student-icon {
+
+    width: 45px;
+    height: 45px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #e5fff1;
+
+    border-radius: 10px;
+}
+
+.student-option div {
+
+    flex: 1;
+}
+
+.student-option strong,
+.student-option small {
+
+    display: block;
+
+    font-family: Arial, sans-serif;
+}
+
+.student-option strong {
+
+    font-size: 14px;
+}
+
+.student-option small {
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #7a837f;
+}
+
+.student-option b {
+
+    color: #00a85f;
+}
+
+
+/* =========================
+   INPUT DO MODAL
+========================= */
+
+.modal-input {
+
+    width: 100%;
+
+    height: 50px;
+
+    border-radius: 10px;
+
+    border: 1px solid #dce3df;
+
+    outline: none;
+
+    padding: 0 15px;
+
+    margin-bottom: 15px;
+
+    font-family: Arial, sans-serif;
+}
+
+.modal-input:focus {
+
+    border-color: #00b968;
+}
+
+.notice {
+
+    background: #e9fff3;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    margin-bottom: 18px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    color: #276044;
+
+    line-height: 1.5;
+}
+
+.voltar {
+
+    width: 100%;
+
+    height: 43px;
+
+    margin-top: 10px;
+
+    border-radius: 9px;
+
+    border: 1px solid #dce3df;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .login-page {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 30px 20px;
+    }
+
+    .presentation {
+
+        text-align: center;
+    }
+
+    .presentation h1 {
+
+        font-size: 40px;
+    }
+
+    .presentation p {
+
+        margin: auto;
+    }
+
+    .stats {
+
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .login-page {
+
+        padding:
+            20px 13px 30px;
+    }
+
+    .presentation h1 {
+
+        font-size: 30px;
+    }
+
+    .presentation p {
+
+        font-size: 13px;
+    }
+
+    .login-card {
+
+        padding:
+            28px 20px;
+
+        border-radius: 21px;
+    }
+
+    .login-options {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .values {
+
+        flex-wrap: wrap;
+    }
+
+    .modal-card {
+
+        padding:
+            28px 20px;
+    }
+
+}
+
+@keyframes floatEmoji {
+
+    0% {
+
+        transform: translateY(0px) rotate(0deg);
+
+    }
+
+
+    25% {
+
+        transform: translateY(-35px) rotate(10deg);
+
+    }
+
+
+    50% {
+
+        transform: translateY(0px) rotate(-10deg);
+
+    }
+
+
+    75% {
+
+        transform: translateY(35px) rotate(10deg);
+
+    }
+
+
+    100% {
+
+        transform: translateY(0px) rotate(0deg);
+
+    }
+
+}
+
+
+.floating-items span:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.floating-items span:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.floating-items span:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.floating-items span:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
+.floating-items span:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.floating-items span:nth-child(7) {
+    animation-delay: 4s;
+}
+
+.floating-items span:nth-child(8) {
+    animation-delay: 5s;
+}

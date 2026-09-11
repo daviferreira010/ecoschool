@@ -1,0 +1,1442 @@
+/* =========================================================
+   ECOSCHOOL — PERFIL
+========================================================= */
+
+.perfil-page {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+
+.perfil-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 28px;
+
+    padding: 34px 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.12),
+        0 0 0 1px rgba(22,163,74,.04);
+
+    overflow: hidden;
+
+    transition: .3s ease;
+}
+
+
+/* brilho decorativo */
+
+.perfil-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -150px;
+    top: -180px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(22,163,74,.18),
+        rgba(37,99,235,.18)
+    );
+
+    border-radius: 50%;
+
+    filter: blur(5px);
+
+    pointer-events: none;
+}
+
+
+/* linha colorida embaixo */
+
+.perfil-card::after {
+    content: "";
+
+    position: absolute;
+
+    left: 40px;
+    right: 40px;
+    bottom: 0;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #16a34a,
+        #10b981,
+        #2563eb
+    );
+
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* ========================= */
+/* FOTO DE PERFIL */
+/* ========================= */
+
+.perfil-photo {
+    width: 120px;
+    min-width: 120px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+/* FOTO */
+
+.perfil-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #10b981
+    );
+
+}
+
+
+/* ÁREA PARA ESCOLHER FOTO */
+
+.perfil-photo input {
+
+    display: none;
+
+}
+
+
+/* ÍCONE DE CÂMERA */
+
+.foto-overlay {
+
+    position: absolute;
+
+    inset: 4px;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.55);
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition: .25s;
+
+}
+
+
+/* APARECE AO PASSAR O MOUSE */
+
+.perfil-photo:hover .foto-overlay {
+
+    opacity: 1;
+
+}
+
+
+.foto-overlay i {
+
+    font-size: 22px;
+
+}
+
+
+.foto-overlay span {
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+/* ========================= */
+/* NOME DO ALUNO */
+/* ========================= */
+
+.perfil-card h1 {
+
+    background: linear-gradient(
+        90deg,
+        #16a34a,
+        #2563eb
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+/* =========================================================
+   NOME DO ALUNO
+========================================================= */
+
+.perfil-card h1 {
+
+    position: relative;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+    margin: 0;
+
+    /* gradiente verde → azul */
+
+    background: linear-gradient(
+        90deg,
+        #16a34a 0%,
+        #10b981 45%,
+        #2563eb 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+
+    letter-spacing: -1px;
+
+    z-index: 2;
+}
+
+
+.perfil-card p {
+
+    position: relative;
+
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 16px;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.perfil-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.info-card,
+.stats-card {
+
+    position: relative;
+
+    background: rgba(255,255,255,.94);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-radius: 26px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.10);
+
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.info-card:hover,
+.stats-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.14);
+}
+
+
+/* brilho no canto */
+
+.info-card::before,
+.stats-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -100px;
+    top: -100px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        rgba(22,163,74,.12),
+        rgba(37,99,235,.12)
+    );
+
+    filter: blur(4px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TÍTULOS DOS CARDS
+========================================================= */
+
+.info-card h2,
+.stats-card h2 {
+
+    position: relative;
+
+    font-size: 24px;
+
+    color: #111827;
+
+    margin-bottom: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    z-index: 2;
+}
+
+
+.info-card h2 i,
+.stats-card h2 i {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #16a34a,
+        #10b981
+    );
+
+    color: white;
+
+    font-size: 18px;
+
+    box-shadow:
+        0 7px 18px rgba(22,163,74,.22);
+}
+
+
+/* =========================================================
+   INFORMAÇÕES PESSOAIS
+========================================================= */
+
+.info-item {
+
+    position: relative;
+
+    padding: 18px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(236,253,245,.95),
+            rgba(239,246,255,.75)
+        );
+
+    border-radius: 18px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid rgba(22,163,74,.08);
+
+    overflow: hidden;
+
+    transition: .25s ease;
+}
+
+
+.info-item::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background: linear-gradient(
+        180deg,
+        #16a34a,
+        #2563eb
+    );
+
+    border-radius: 5px;
+}
+
+
+.info-item:hover {
+
+    transform: translateX(5px);
+
+    box-shadow:
+        0 8px 20px rgba(22,163,74,.08);
+}
+
+
+.info-item span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+
+.info-item strong {
+
+    display: block;
+
+    margin-top: 6px;
+
+    color: #111827;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   ESTATÍSTICAS
+========================================================= */
+
+.stat-box {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(236,253,245,.95),
+            rgba(239,246,255,.85)
+        );
+
+    border-radius: 18px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid rgba(22,163,74,.08);
+
+    transition: .25s ease;
+
+    overflow: hidden;
+}
+
+
+.stat-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -45px;
+    bottom: -55px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22,163,74,.12),
+            rgba(37,99,235,.12)
+        );
+}
+
+
+.stat-box:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(22,163,74,.10);
+}
+
+
+/* Ícone */
+
+.stat-box i {
+
+    width: 54px;
+    height: 54px;
+
+    min-width: 54px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #10b981
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 8px 20px rgba(16,185,129,.25);
+
+    z-index: 2;
+}
+
+
+/* texto */
+
+.stat-box span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: .3px;
+
+    z-index: 2;
+}
+
+
+.stat-box strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 29px;
+
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #16a34a,
+        #2563eb
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    color: transparent;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   BOTÃO EDITAR
+========================================================= */
+
+.edit-btn {
+
+    margin: 30px auto 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #16a34a,
+            #10b981,
+            #2563eb
+        );
+
+    background-size: 200% auto;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 16px 35px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .35s ease;
+
+    box-shadow:
+        0 10px 25px rgba(22,163,74,.20);
+}
+
+
+.edit-btn:hover {
+
+    background-position: right center;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(37,99,235,.20);
+}
+
+
+/* =========================================================
+   MODAL EDITAR
+========================================================= */
+
+.edit-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(3,10,20,.55);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    backdrop-filter: blur(8px);
+
+    z-index: 999;
+}
+
+
+.edit-modal.active {
+
+    display: flex;
+
+    animation: modalFade .25s ease;
+}
+
+
+.edit-box {
+
+    position: relative;
+
+    background: rgba(255,255,255,.96);
+
+    backdrop-filter: blur(20px);
+
+    width: 420px;
+
+    max-width: 90%;
+
+    padding: 35px;
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    animation: modalScale .3s ease;
+}
+
+
+.edit-box h2 {
+
+    margin-bottom: 25px;
+
+    color: #111827;
+
+}
+
+
+.edit-box label {
+
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+.edit-box input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    border: 1px solid #d1d5db;
+
+    outline: none;
+
+    transition: .2s;
+}
+
+
+.edit-box input:focus {
+
+    border-color: #16a34a;
+
+    box-shadow:
+        0 0 0 4px rgba(22,163,74,.12);
+}
+
+
+/* =========================================================
+   BOTÕES DO MODAL
+========================================================= */
+
+.modal-buttons {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.modal-buttons button {
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.modal-buttons button:hover {
+
+    transform: translateY(-2px);
+}
+
+
+#cancelEdit {
+
+    background: #e5e7eb;
+
+    color: #374151;
+}
+
+
+#saveEdit {
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #2563eb
+        );
+
+    color: white;
+}
+
+
+/* =========================================================
+   MODAL ATUALIZAÇÃO
+========================================================= */
+
+.update-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(3,10,20,.55);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    backdrop-filter: blur(8px);
+
+    z-index: 9999;
+}
+
+
+.update-modal.active {
+
+    display: flex;
+
+    animation: modalFade .25s ease;
+}
+
+
+.update-box {
+
+    background: rgba(255,255,255,.96);
+
+    backdrop-filter: blur(20px);
+
+    width: 420px;
+
+    max-width: 90%;
+
+    padding: 40px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
+    animation: modalScale .3s ease;
+}
+
+
+.update-icon {
+
+    width: 90px;
+    height: 90px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #10b981,
+            #2563eb
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 45px;
+
+    box-shadow:
+        0 12px 30px rgba(22,163,74,.25);
+}
+
+
+.update-box h2 {
+
+    margin-top: 25px;
+
+    font-size: 30px;
+
+    color: #111827;
+}
+
+
+.update-box p {
+
+    margin-top: 15px;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+}
+
+
+.update-box button {
+
+    margin-top: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #2563eb
+        );
+
+    color: white;
+
+    border: none;
+
+    padding: 15px 35px;
+
+    border-radius: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.update-box button:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+========================================================= */
+
+@keyframes modalFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes modalScale {
+
+    from {
+        opacity: 0;
+        transform: scale(.92) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+
+    margin-top: 80px;
+
+    padding: 35px 20px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 -10px 30px rgba(0,0,0,.08);
+
+    color: #111;
+}
+
+
+.footer-content {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.footer-logo {
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #16a34a,
+            #2563eb
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 10px;
+}
+
+
+.footer p {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    color: #64748b;
+
+    margin-bottom: 15px;
+}
+
+
+.footer span {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media(max-width:900px) {
+
+    .perfil-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .perfil-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 30px 25px;
+
+    }
+
+
+    .perfil-card h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .perfil-card::after {
+
+        left: 25px;
+        right: 25px;
+
+    }
+
+
+    .info-card,
+    .stats-card {
+
+        padding: 24px;
+
+    }
+
+}
+
+/* ============================
+   BOTÃO SAIR
+============================ */
+
+.btn-sair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin: 30px auto 50px;
+
+    padding: 12px 24px;
+
+    border: 1px solid #dc2626;
+    border-radius: 10px;
+
+    background: #fff;
+    color: #dc2626;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.btn-sair:hover {
+    background: #dc2626;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   BOTÃO REMOVER FOTO
+   ========================================================= */
+
+.btn-remover-foto {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 8px 14px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #dc2626;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+
+.btn-remover-foto:hover {
+    background: #dc2626;
+
+    color: white;
+
+    border-color: #dc2626;
+
+    transform: translateY(-1px);
+}
+
+
+.btn-remover-foto i {
+    font-size: 12px;
+}
+/* =========================================================
+   CONTAINER DA FOTO
+   ========================================================= */
+
+.foto-container {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+/* FOTO */
+
+.foto-container img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: #f1f5f9;
+}
+
+
+/* =========================================================
+   ALTERAR FOTO
+   ========================================================= */
+
+.foto-overlay {
+    position: absolute;
+
+    inset: 4px;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    background: rgba(0, 0, 0, .55);
+
+    color: white;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    transition: .25s ease;
+}
+
+.foto-container:hover .foto-overlay {
+    opacity: 1;
+}
+
+.foto-overlay i {
+    font-size: 22px;
+}
+
+.foto-overlay span {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* INPUT */
+
+#inputFoto {
+    display: none;
+}
+
+
+/* =========================================================
+   REMOVER FOTO
+   ========================================================= */
+
+.btn-remover-foto {
+    margin-top: 8px;
+    padding: 5px 10px;
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+    background: white;
+    color: #dc2626;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-remover-foto:hover {
+    background: #fee2e2;
+}
+.btn-remover-foto:hover {
+    background: #dc2626;
+
+    color: #fff;
+
+    border-color: #dc2626;
+
+    transform: translateY(-2px);
+}
+
+.btn-remover-foto i {
+    font-size: 12px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-logo img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.footer-logo span {
+    font-size: 20px;
+    font-weight: 800;
+    color: #16a34a;
+}
+
+/* =========================================================
+   PERFIL — RESPONSIVO PARA CELULAR
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .perfil-container,
+    .perfil-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px 14px;
+    }
+
+    .perfil-card {
+        width: 100%;
+        padding: 24px 18px;
+    }
+
+    .perfil-card h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .perfil-photo {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foto-container {
+        width: 110px;
+        height: 110px;
+    }
+
+    .btn-remover-foto {
+        width: auto;
+        max-width: 100%;
+        margin-top: 12px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .info-item {
+        width: 100%;
+        padding: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-box {
+        padding: 16px 10px;
+    }
+
+    .stat-box strong {
+        font-size: 24px;
+    }
+
+    .stat-box span {
+        font-size: 12px;
+    }
+}

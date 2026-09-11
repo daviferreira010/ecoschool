@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script>
+    if (localStorage.getItem("ecoSchoolTema") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+</script>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Ranking | Eco School</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="./img/minhalogo.png"
+    >
+
+    <!-- NAVBAR -->
+    <link
+        rel="stylesheet"
+        href="./css/navbar.css"
+    >
+
+    <!-- RANKING -->
+    <link
+        rel="stylesheet"
+        href="./css/ranking.css"
+    >
+
+    <!-- FUNDO -->
+    <link
+        rel="stylesheet"
+        href="./css/background.css"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- GOOGLE FONT -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         FUNDO ANIMADO
+    ====================================================== -->
+
+    <div class="eco-system">
+
+        <canvas id="eco-network"></canvas>
+
+        <div class="eco-aurora aurora-green"></div>
+
+        <div class="eco-aurora aurora-blue"></div>
+
+        <div class="eco-aurora aurora-light"></div>
+
+        <div class="eco-icon icon-1">♻</div>
+
+        <div class="eco-icon icon-2">🌱</div>
+
+        <div class="eco-icon icon-3">🍃</div>
+
+        <div class="eco-icon icon-4">🗑</div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                <img
+                    src="./img/minhalogo.png"
+                    alt="Logo Eco School"
+                >
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <h1>
+
+                    <span class="green-text">
+                        Eco
+                    </span>
+
+                    <span class="blue-text">
+                        School
+                    </span>
+
+                </h1>
+
+
+                <span>
+                    RECICLE. PONTUE. GANHE.
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Início
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="ranking.html"
+                    class="active"
+                >
+                    Ranking
+                </a>
+            </li>
+
+            <li>
+                <a href="coletas.html">
+                    Coletas
+                </a>
+            </li>
+
+            <li>
+                <a href="perfil.html">
+                    Perfil
+                </a>
+            </li>
+
+        </ul>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main class="ranking-page">
+
+
+        <!-- =================================================
+             CABEÇALHO
+        ================================================== -->
+
+        <section class="ranking-header">
+
+            <div class="ranking-title-area">
+
+                <span class="ranking-label">
+
+                    <i class="fa-solid fa-ranking-star"></i>
+
+                    COMPETIÇÃO SUSTENTÁVEL
+
+                </span>
+
+
+                <h1 class="ranking-title">
+
+                    Ranking
+                    <span>EcoSchool</span>
+
+                </h1>
+
+
+                <p class="ranking-subtitle">
+
+                    Acompanhe o desempenho das escolas,
+                    turmas e alunos na competição.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="season-card">
+
+                <div class="season-icon">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        TEMPORADA
+                    </span>
+
+                    <strong>
+                        2026
+                    </strong>
+
+                    <small>
+                        Em andamento
+                    </small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MINHA ESCOLA
+        ================================================== -->
+
+        <section class="my-school-card">
+
+
+            <div class="my-school-top">
+
+
+                <div class="my-school-information">
+
+                    <span class="small-label">
+                        SUA ESCOLA
+                    </span>
+
+
+                    <h2 id="minhaEscola">
+                        Carregando...
+                    </h2>
+
+
+                    <p id="minhaCidade">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Carregando...
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="my-school-position">
+
+                    <span>
+                        POSIÇÃO ESTADUAL
+                    </span>
+
+                    <strong id="posicaoMinhaEscola">
+                        #-
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="school-stats">
+
+
+                <div class="school-stat">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            PONTOS
+                        </span>
+
+                        <strong id="minhaEscolaPontos">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="school-stat">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-recycle"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            RECICLAGEM
+                        </span>
+
+                        <strong id="minhaEscolaReciclado">
+                            0 kg
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="school-stat">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            SEUS PONTOS
+                        </span>
+
+                        <strong id="meusPontos">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ABAS
+        ================================================== -->
+
+        <nav class="ranking-tabs">
+
+
+            <button
+                class="ranking-tab active"
+                data-content="schools"
+            >
+
+                <i class="fa-solid fa-earth-americas"></i>
+
+                <span>
+                    Estadual
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="ranking-tab"
+                data-content="classes"
+            >
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <span>
+                    Turmas
+                </span>
+
+            </button>
+
+
+
+            <button
+                class="ranking-tab"
+                data-content="students"
+            >
+
+                <i class="fa-solid fa-user-group"></i>
+
+                <span>
+                    Alunos
+                </span>
+
+            </button>
+
+
+        </nav>
+
+
+
+        <!-- =================================================
+             RANKING
+        ================================================== -->
+
+        <section id="ranking-content">
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-logo">
+
+                <img
+                    src="./img/minhalogo.png"
+                    alt="Eco School"
+                >
+
+                <span>
+
+                    <b class="green-text">
+                        Eco
+                    </b>
+
+                    <b class="blue-text">
+                        School
+                    </b>
+
+                </span>
+
+            </div>
+
+
+            <p>
+                Transformando escolas em comunidades sustentáveis.
+            </p>
+
+
+            <span>
+                © 2026 Eco School.
+                Todos os direitos reservados.
+            </span>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="./js/dados.js"></script>
+
+    <script src="./js/background.js"></script>
+
+    <script src="./js/ranking.js"></script>
+
+    <script src="./js/main.js"></script>
+
+    <script src="./js/protecao.js"></script>
+
+
+</body>
+
+</html>

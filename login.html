@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Eco School</title>
+ <link rel="icon" type="image/png" href="img/minhalogo.png">
+ 
+    <link rel="stylesheet" href="css/background.css">
+<link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+<!-- FUNDO ANIMADO IGUAL A HOME -->
+
+<div class="eco-system">
+
+    <canvas id="eco-network"></canvas>
+
+    <div class="eco-aurora aurora-green"></div>
+    <div class="eco-aurora aurora-blue"></div>
+    <div class="eco-aurora aurora-light"></div>
+
+</div>
+
+    <main class="login-page">
+
+        <!-- FUNDO DECORATIVO -->
+        <div class="floating-items">
+            <span>♻</span>
+            <span>🍃</span>
+            <span>🗑</span>
+            <span>📦</span>
+            <span>♻</span>
+            <span>🍃</span>
+            <span>📦</span>
+            <span>♻</span>
+        </div>
+
+
+        <!-- LADO ESQUERDO -->
+        <section class="presentation">
+
+            <div class="badge">
+                ♻ Plataforma sustentável
+            </div>
+
+            <h1>
+                Transformando escolas em
+                <span>comunidades sustentáveis</span>
+            </h1>
+
+            <p>
+                O Eco School conecta alunos, reciclagem e educação
+                ambiental em uma plataforma simples, interativa e colaborativa.
+            </p>
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <strong>500+</strong>
+                    <span>Reciclagens</span>
+                </div>
+
+                <div class="stat-card">
+                    <strong>200+</strong>
+                    <span>Alunos</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LOGIN -->
+        <section class="login-card">
+
+            <!-- LOGO -->
+            <div class="logo">
+
+                <div class="logo-icon">
+    <img src="./img/minhalogo.png" alt="Logo Eco School">
+</div>
+
+                <div>
+                    <div class="logo-name">
+                        <span>ECO</span>SCHOOL
+                    </div>
+
+                    <small>
+                        RECICLE. PONTUE. GANHE.
+                    </small>
+                </div>
+
+            </div>
+
+
+            <div class="welcome">
+
+                <h2>
+                    Bem-vindo ao <span>Eco School!</span>
+                </h2>
+
+                <p>
+                    Entre na sua conta para continuar.
+                </p>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+            <form id="loginForm">
+
+                <label for="email">
+                    E-mail institucional
+                </label>
+
+                <div class="input-container">
+
+                    <span>✉</span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="seu.email@escola.com"
+                        required
+                    >
+
+                </div>
+
+                <small class="help">
+                    Utilize o e-mail institucional da sua escola.
+                </small>
+
+
+                <label for="senha">
+                    Senha
+                </label>
+
+                <div class="input-container">
+
+                    <span>🔒</span>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        onclick="mostrarSenha()">
+                        ◉
+                    </button>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Lembrar de mim
+                    </label>
+
+                    <button
+                        type="button"
+                        onclick="esqueciSenha()">
+                        Esqueci minha senha
+                    </button>
+
+                </div>
+
+
+                <p id="mensagem"></p>
+
+
+                <button
+                    type="submit"
+                    class="btn-entrar">
+
+                    ENTRAR →
+                    
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                <span>ou</span>
+            </div>
+
+
+            <button
+                class="google-button"
+                onclick="loginGoogle()">
+
+                <strong>G</strong>
+                Entrar com Google
+
+            </button>
+
+
+            <!-- CADASTRO -->
+            <div class="register">
+
+                <p>
+                    Ainda não possui uma conta?
+                </p>
+
+                <button onclick="abrirCadastro()">
+                    Cadastrar agora
+                </button>
+
+            </div>
+
+
+            <div class="values">
+
+                <span>🌱 Sustentabilidade</span>
+                <span>♻ Consciência</span>
+                <span>🏆 Pontuação</span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL CADASTRO -->
+
+    <div
+        class="modal"
+        id="modalCadastro">
+
+        <div class="modal-card">
+
+            <button
+                class="fechar"
+                onclick="fecharCadastro()">
+
+                ×
+
+            </button>
+
+
+            <!-- PRIMEIRA ETAPA -->
+
+            <div id="etapa1">
+
+                <div class="modal-icon">
+                    ♻
+                </div>
+
+                <h2>
+                    Crie sua conta
+                </h2>
+
+                <p>
+                    Para começar, precisamos confirmar
+                    seu vínculo com a escola.
+                </p>
+
+
+                <button
+                    class="student-option"
+                    onclick="abrirEtapa2()">
+
+                    <span class="student-icon">
+                        👨‍🎓
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Sou estudante
+                        </strong>
+
+                        <small>
+                            Tenho vínculo com uma escola.
+                        </small>
+
+                    </div>
+
+                    <b>→</b>
+
+                </button>
+
+            </div>
+
+
+            <!-- SEGUNDA ETAPA -->
+
+<div id="etapa2" class="hidden">
+
+    <div class="modal-icon">
+        👤
+    </div>
+
+    <h2>
+        Dados Pessoais
+    </h2>
+
+    <p>
+        Informe seus dados para criar sua conta.
+    </p>
+
+    <div class="notice">
+        🔐 Essas informações ficarão protegidas e não poderão ser alteradas posteriormente.
+    </div>
+
+    <label>Nome Completo</label>
+
+    <input
+        class="modal-input"
+        type="text"
+        id="nome"
+        placeholder="Digite seu nome completo"
+    >
+
+    <label>CPF</label>
+
+    <input
+        class="modal-input"
+        type="text"
+        id="cpf"
+        placeholder="000.000.000-00"
+        maxlength="14"
+    >
+
+    <label>Data de nascimento</label>
+
+    <input
+        class="modal-input"
+        type="date"
+        id="dataNascimento"
+    >
+
+    <button
+        class="btn-entrar"
+        onclick="abrirEtapa3()">
+
+        CONTINUAR →
+
+    </button>
+
+    <button
+        class="voltar"
+        onclick="voltarEtapa1()">
+
+        ← Voltar
+
+    </button>
+
+</div>
+
+
+            <!-- TERCEIRA ETAPA -->
+
+<div id="etapa3" class="hidden">
+
+    <div class="modal-icon">
+        🎓
+    </div>
+
+    <h2>
+        Dados da Conta
+    </h2>
+
+    <p>
+        Agora informe os dados da sua conta e da sua escola.
+    </p>
+
+    <label>E-mail Institucional</label>
+
+    <input
+        class="modal-input"
+        type="email"
+        id="cadastroEmail"
+        placeholder="seu.email@escola.com"
+    >
+
+    <label>Senha</label>
+
+    <input
+        class="modal-input"
+        type="password"
+        id="novaSenha"
+        placeholder="Mínimo de 8 caracteres"
+    >
+
+    <label>Confirmar Senha</label>
+
+    <input
+        class="modal-input"
+        type="password"
+        id="confirmarSenha"
+        placeholder="Digite novamente"
+    >
+
+   
+
+    <label>Escola</label>
+<select
+    id="escola"
+    class="modal-input"
+    required>
+    <option value="">Selecione sua escola</option>
+</select>
+
+    <label>Turma</label>
+
+    <select
+        id="turma"
+        class="modal-input">
+
+        <option value="">Selecione sua turma</option>
+
+    </select>
+
+    <p id="mensagemCadastro"></p>
+
+    <button
+        class="btn-entrar"
+        onclick="criarConta()">
+
+        CRIAR MINHA CONTA →
+
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/background.js"></script>
+<script src="js/auth.js"></script>
+
+
+</body>
+
+</html>

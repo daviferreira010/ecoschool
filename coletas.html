@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>
+    if (localStorage.getItem("ecoSchoolTema") === "dark") {
+        document.documentElement.classList.add("dark-mode");
+    }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coletas | Eco School</title>
+<link rel="icon" type="image/png" href="img/minhalogo.png">
+
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/coletas.css">
+    <link rel="stylesheet" href="./css/background.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="eco-system">
+
+    <canvas id="eco-network"></canvas>
+
+    <div class="eco-aurora aurora-green"></div>
+    <div class="eco-aurora aurora-blue"></div>
+    <div class="eco-aurora aurora-light"></div>
+
+    <div class="eco-icon icon-1">♻</div>
+    <div class="eco-icon icon-2">🌱</div>
+    <div class="eco-icon icon-3">🍃</div>
+    <div class="eco-icon icon-4">🗑</div>
+
+</div>
+
+<header class="navbar">
+
+    <div class="logo">
+
+    <div class="logo-icon">
+        <img src="./img/minhalogo.png" alt="Logo">
+    </div>
+
+
+       <div class="logo-text">
+    
+        <h1>
+            <span class="green-text">Eco</span>
+            <span class="blue-text">School</span>
+        </h1>
+
+        <span>RECICLE. PONTUE. GANHE.</span>
+
+    </div>
+
+</div>
+
+
+<ul class="nav-links">
+    
+        <li><a href="index.html">Início</a></li>
+        <li><a href="ranking.html">Ranking</a></li>
+        <li><a href="coletas.html" class="active">Coletas</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+    </ul>
+
+  
+</header>
+
+<main class="coletas-page">
+
+    <!-- BOAS-VINDAS -->
+
+    <section class="welcome-card">
+
+        <div class="welcome-text">
+
+            <h1>Bem-vindo, <span id="nomeUsuario">Aluno</span>!</h1>
+
+            <p>
+                Acompanhe suas coletas, pontos e contribua para um futuro mais sustentável.
+            </p>
+
+        </div>
+
+        <div class="welcome-icon">
+            <i class="fa-solid fa-truck"></i>
+        </div>
+
+    </section>
+
+   <section class="coletas-grid">
+
+    <!-- =========================================
+         PAINEL ESQUERDO — FORMULÁRIO
+    ========================================== -->
+
+    <div class="form-card">
+
+        <h2>Solicitar nova coleta</h2>
+
+        <p>
+            Preencha as informações e agende sua coleta.
+        </p>
+
+
+        <!-- PROGRESSO -->
+
+        <div class="steps">
+
+            <div class="step active">1</div>
+            <div class="line"></div>
+
+            <div class="step">2</div>
+            <div class="line"></div>
+
+            <div class="step">3</div>
+
+        </div>
+
+
+        <!-- FORMULÁRIO -->
+
+        <form id="coletaForm">
+
+
+            <!-- =====================================
+                 ETAPA 1
+            ====================================== -->
+
+            <div class="step-content active" id="step1">
+
+                <div class="form-grid">
+
+
+                    <!-- CALENDÁRIO -->
+
+                    <div class="calendar-section">
+
+                        <div class="calendar-header">
+
+                            <div>
+
+                                <span class="calendar-label">
+                                    AGENDAMENTO
+                                </span>
+
+                                <h3>
+                                    Escolha a data da coleta
+                                </h3>
+
+                                <p>
+                                    Selecione um dos dias disponíveis para sua escola.
+                                </p>
+
+                            </div>
+
+
+                            <div class="calendar-navigation">
+
+                                <button
+                                    type="button"
+                                    id="prevMonth"
+                                >
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+
+
+                                <span id="calendarMonth">
+                                    Carregando...
+                                </span>
+
+
+                                <button
+                                    type="button"
+                                    id="nextMonth"
+                                >
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DIAS DA SEMANA -->
+
+                        <div class="calendar-weekdays">
+
+                            <span>Dom</span>
+                            <span>Seg</span>
+                            <span>Ter</span>
+                            <span>Qua</span>
+                            <span>Qui</span>
+                            <span>Sex</span>
+                            <span>Sáb</span>
+
+                        </div>
+
+
+                        <!-- DIAS -->
+
+                        <div
+                            class="calendar-days"
+                            id="calendarDays"
+                        ></div>
+
+
+                        <!-- DATA ESCOLHIDA -->
+
+                        <input
+                            type="hidden"
+                            id="data"
+                        >
+
+
+                        <!-- LEGENDA -->
+
+                        <div class="calendar-legend">
+
+    <div>
+        <span class="legend-dot available"></span>
+        Disponível
+    </div>
+
+    <div>
+        <span class="legend-dot selected"></span>
+        Selecionado
+    </div>
+
+    <div>
+        <span class="legend-dot closing"></span>
+        Encerrado
+    </div>
+
+    <div>
+        <span class="legend-dot unavailable"></span>
+        Dia comum
+    </div>
+
+    <div>
+        <span class="legend-dot used"></span>
+        Já utilizado
+    </div>
+
+</div>
+
+                    </div>
+
+
+                    <!-- PERÍODO -->
+
+                    <div class="input-group">
+
+                        <label>Período</label>
+
+                        <select id="periodo">
+
+                            <option>Manhã</option>
+                            <option>Tarde</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- OBSERVAÇÕES -->
+
+                    <div class="input-group">
+
+                        <label>Observações</label>
+
+                        <textarea
+                            id="obs"
+                            placeholder="Alguma observação sobre a coleta?"
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button
+                        type="button"
+                        class="continue-btn"
+                        id="next1"
+                    >
+
+                        Próximo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 ETAPA 2
+            ====================================== -->
+
+            <div class="step-content" id="step2">
+
+                <h3>Materiais para coleta</h3>
+
+
+                <div class="checkbox-grid">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            value="Papel"
+                        >
+
+                        Papel
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            value="Plástico"
+                        >
+
+                        Plástico
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            value="Vidro"
+                        >
+
+                        Vidro
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            value="Metal"
+                        >
+
+                        Metal
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            value="Eletrônicos"
+                        >
+
+                        Eletrônicos
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            value="Pilhas"
+                        >
+
+                        Pilhas
+
+                    </label>
+
+                </div>
+
+
+                <div class="input-group quantidade">
+
+                    <label>Quantidade estimada</label>
+
+                    <select id="quantidade">
+
+                        <option>Até 10 kg</option>
+                        <option>10 a 20 kg</option>
+                        <option>20 a 30 kg</option>
+                        <option>Acima de 30 kg</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        id="back1"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Voltar
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="continue-btn"
+                        id="next2"
+                    >
+
+                        Próximo
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 ETAPA 3
+            ====================================== -->
+
+            <div class="step-content" id="step3">
+
+                <h3>Confirme sua coleta</h3>
+
+
+                <div class="confirm-box">
+
+                    <p>
+                        <strong>Escola:</strong>
+                        <span id="rEscola"></span>
+                    </p>
+
+
+                    <p>
+                        <strong>Data:</strong>
+                        <span id="rData"></span>
+                    </p>
+
+
+                    <p>
+                        <strong>Período:</strong>
+                        <span id="rPeriodo"></span>
+                    </p>
+
+
+                    <p>
+                        <strong>Materiais:</strong>
+                        <span id="rMateriais"></span>
+                    </p>
+
+
+                    <p>
+                        <strong>Quantidade:</strong>
+                        <span id="rQuantidade"></span>
+                    </p>
+
+
+                    <p>
+                        <strong>Observações:</strong>
+                        <span id="rObs"></span>
+                    </p>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <button
+                        type="button"
+                        class="back-btn"
+                        id="back2"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Voltar
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="continue-btn"
+                    >
+
+                        Confirmar coleta
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+    <!-- =========================================
+         PAINEL DIREITO
+    ========================================== -->
+
+    <div class="side-panel">
+
+
+        <!-- CICLO -->
+
+        <div class="ciclo-card">
+
+            <h3>🔄 Ciclo Mensal</h3>
+
+            <p id="mesCiclo"></p>
+
+
+            <div class="ciclo-info">
+
+                <span>Tempo restante</span>
+
+                <strong id="contadorCiclo"></strong>
+
+            </div>
+
+
+            <div class="ciclo-info">
+
+                <span>Pontos no ciclo</span>
+
+                <strong id="pontosCiclo">0</strong>
+
+            </div>
+
+
+            <div class="ciclo-info">
+
+                <span>Coletas realizadas</span>
+
+                <strong id="coletasCiclo">0</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- COLETAS AGENDADAS -->
+
+        <div class="next-card">
+
+            <h3>📋 Coletas agendadas</h3>
+
+            <div id="listaColetas">
+
+                <p>Nenhuma coleta agendada.</p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+</main>
+
+<script src="./js/dados.js"></script>
+<script src="./js/background.js"></script>
+<script src="./js/coletas.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/protecao.js"></script>
+<!-- MODAL DE SUCESSO -->
+
+<div class="success-modal" id="successModal">
+
+    <div class="success-box">
+
+        <div class="success-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+
+        <h2>Coleta confirmada! 🎉</h2>
+
+
+        <p>
+            Sua solicitação foi enviada com sucesso.
+            Você ganhou pontos pela contribuição sustentável.
+        </p>
+
+
+    <button type="button" id="closeModal">
+    Continuar
+</button>
+
+    </div>
+
+</div>
+<footer class="footer">
+
+    <div class="footer-content">
+
+       <div class="footer-logo">
+    <img src="./img/minhalogo.png" alt="Eco School">
+    <span>
+        <b class="green-text">Eco</b><b class="blue-text">School</b>
+    </span>
+</div>
+
+        <p>
+            Transformando escolas em comunidades sustentáveis.
+        </p>
+
+        <span>
+            © 2026 Eco School. Todos os direitos reservados.
+        </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

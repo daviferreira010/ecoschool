@@ -36,7 +36,6 @@
   .stats { grid-template-columns: repeat(3, 1fr); }
   .stat:last-child:nth-child(odd) { grid-column: auto; }
   .hero-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero-stack__card--news { grid-column: 1 / -1; }
 }
 
 /* ---------- ≥ 720px (tablet) ---------- */
@@ -80,14 +79,10 @@
 /* ---------- ≥ 992px (notebook) ---------- */
 @media (min-width: 992px) {
   .hero__inner { grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr); gap: 56px; }
-  .hero-stack { grid-template-columns: 1fr; transform-style: preserve-3d; }
-  .hero-stack__card--news { grid-column: auto; }
-  /* cartões em perspectiva, como uma pilha flutuando */
-  .hero-stack__card { transform: rotateY(-14deg) rotateX(4deg) translateZ(0); }
-  .hero-stack__card:nth-child(2) { transform: rotateY(-14deg) rotateX(4deg) translateX(28px) translateZ(30px); }
-  .hero-stack__card:nth-child(3) { transform: rotateY(-14deg) rotateX(4deg) translateX(56px) translateZ(60px); }
-  .hero-stack:hover .hero-stack__card { transform: rotateY(-4deg) translateX(0) translateZ(0); }
-  .hero-stack__card:hover { transform: rotateY(0) translateX(-8px) translateZ(40px) !important; }
+  /* carrossel do hero levemente inclinado em 3D; endireita ao passar o mouse */
+  .hero-side { perspective: 1400px; }
+  .hero-news { transform: rotateY(-9deg) rotateX(3deg); transition: transform .8s var(--ease); }
+  .hero-side:hover .hero-news, .hero-news:focus-within { transform: none; }
   .about { grid-template-columns: 1fr 1fr; gap: 72px; }
   .news-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .calendar { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; }

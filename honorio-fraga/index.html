@@ -67,7 +67,14 @@
             <a class="btn btn--glass btn--lg" href="#noticias"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> Últimas notícias</a>
           </div>
         </div>
-        <div class="hero-stack" id="hero-stack" aria-label="Destaques da escola"></div>
+        <!-- Carrossel "Acontece na escola": mostra as notícias mais recentes (js/pages.js) -->
+        <div class="hero-side">
+          <div class="hero-news">
+            <p class="hero-news__label"><span class="hero__pulse" aria-hidden="true"></span> Acontece na escola</p>
+            <div class="carousel carousel--single hero-news__carousel" id="hero-news" aria-label="Notícias recentes"></div>
+          </div>
+          <div class="hero-stack" id="hero-stack" aria-label="Agenda e avisos"></div>
+        </div>
       </div>
     </section>
 

@@ -44,12 +44,39 @@ const Pages = (() => {
         </li>`).join('');
     }
 
-    // Cartões 3D do hero: próximo evento, comunicado e notícia
+    // Carrossel de notícias do hero ("Acontece na escola")
+    const heroNews = qs('#hero-news');
+    if (heroNews) {
+      const lista = (await API.noticiasPublicadas()).slice(0, 5);
+      if (lista.length) {
+        heroNews.innerHTML = `<div class="carousel__viewport"><div class="carousel__track">${lista.map((n) => {
+          const url = `noticia.html?id=${encodeURIComponent(n.id)}`;
+          return `<div class="carousel__slide">
+            <article class="hero-news__slide">
+              <a class="hero-news__media" href="${url}" tabindex="-1" aria-hidden="true">
+                <img src="${asset(n.imagem)}" alt="" width="800" height="500">
+                <span class="badge badge--light">${escapeHTML(n.categoria)}</span>
+              </a>
+              <div class="hero-news__body">
+                <time datetime="${escapeHTML(n.data)}"><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${formatDate(n.data)}</time>
+                <h2 class="hero-news__title"><a href="${url}">${escapeHTML(n.titulo)}</a></h2>
+                <p class="hero-news__excerpt">${escapeHTML(n.resumo)}</p>
+                <a class="hero-news__more" href="${url}" aria-label="Leia mais: ${escapeHTML(n.titulo)}">Leia mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              </div>
+            </article>
+          </div>`;
+        }).join('')}</div></div>`;
+        new Carousel(heroNews, { autoplay: 5500 });
+      } else {
+        heroNews.closest('.hero-news').hidden = true;
+      }
+    }
+
+    // Cartões do hero: próximo evento e comunicado
     const stack = qs('#hero-stack');
     if (stack) {
       const [ev] = await API.proximosEventos(1);
       const [com] = await API.comunicadosAtivos();
-      const [not] = await API.noticiasPublicadas();
       const d = ev ? dateParts(ev.data) : null;
       stack.innerHTML = `
         ${ev ? `<a class="hero-stack__card hero-stack__card--event" href="eventos.html">
@@ -57,10 +84,7 @@ const Pages = (() => {
           <span><small>Próximo evento</small><strong>${escapeHTML(ev.titulo)}</strong><em>${escapeHTML(Eventos.horario(ev))}</em></span></a>` : ''}
         ${com ? `<a class="hero-stack__card hero-stack__card--notice" href="#comunicados">
           <span class="hero-stack__icon hero-stack__icon--${escapeHTML(com.nivel)}"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
-          <span><small>Comunicado · ${escapeHTML(nivelInfo[com.nivel]?.nome || '')}</small><strong>${escapeHTML(com.titulo)}</strong></span></a>` : ''}
-        ${not ? `<a class="hero-stack__card hero-stack__card--news" href="noticia.html?id=${encodeURIComponent(not.id)}">
-          <img src="${asset(not.imagem)}" alt="" width="96" height="64">
-          <span><small>Última notícia</small><strong>${escapeHTML(not.titulo)}</strong></span></a>` : ''}`;
+          <span><small>Comunicado · ${escapeHTML(nivelInfo[com.nivel]?.nome || '')}</small><strong>${escapeHTML(com.titulo)}</strong></span></a>` : ''}`;
     }
 
     await Promise.all([

@@ -135,7 +135,8 @@ const Anim = (() => {
       .from('.hero__title .line', { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.12 }, '-=0.3')
       .from('.hero__lead', { y: 20, opacity: 0, duration: 0.7 }, '-=0.5')
       .from('.hero__actions > *', { y: 16, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.4')
-      .from('.hero-stack__card', { y: 60, rotateX: -25, opacity: 0, duration: 1, stagger: 0.15, clearProps: 'transform,opacity' }, '-=0.6');
+      .from('.hero-news', { y: 50, rotateY: -20, opacity: 0, duration: 1, clearProps: 'transform,opacity' }, '-=0.6')
+      .from('.hero-stack__card', { y: 30, opacity: 0, duration: 0.7, stagger: 0.12, clearProps: 'transform,opacity' }, '-=0.5');
 
     // O conteúdo do hero se afasta levemente ao rolar (profundidade)
     gsap.to('.hero__content', {

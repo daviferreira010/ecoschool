@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>EEEFM Honório Fraga | Colatina - ES</title>
+  <meta name="description" content="Site institucional da EEEFM Honório Fraga, escola estadual de Colatina – Espírito Santo. Notícias, eventos, calendário, documentos, área do aluno e dos responsáveis.">
+  <meta name="theme-color" content="#0c3478">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph (redes sociais). Ao publicar, troque por URLs absolutas: https://SEU-DOMINIO/... -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="EEEFM Honório Fraga">
+  <meta property="og:title" content="EEEFM Honório Fraga | Colatina - ES">
+  <meta property="og:description" content="Site institucional da EEEFM Honório Fraga, escola estadual de Colatina – Espírito Santo. Notícias, eventos, calendário, documentos, área do aluno e dos responsáveis.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <!-- Fontes e ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Aplica o tema salvo antes de desenhar a página (evita "piscar") -->
+  <script>try{var t=JSON.parse(localStorage.getItem('hf_theme'));if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/noticias.css">
+  <link rel="stylesheet" href="css/eventos.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <header id="site-header"></header>
+  <noscript>
+    <div class="noscript">
+      <strong>O JavaScript está desativado.</strong> Algumas partes do site (notícias, eventos, menu) precisam dele. Links principais:
+      <nav aria-label="Menu alternativo">
+        <a href="index.html">Início</a><a href="escola.html">A Escola</a><a href="ensino.html">Ensino</a><a href="noticias.html">Notícias</a>
+        <a href="eventos.html">Eventos</a><a href="projetos.html">Projetos</a><a href="alunos.html">Alunos</a><a href="responsaveis.html">Responsáveis</a>
+        <a href="documentos.html">Documentos</a><a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </noscript>
+
+  <main id="conteudo" tabindex="-1">
+    <!-- ================= HERO (com cena 3D) ================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Foto principal: substitua assets/images/escola.jpg pela foto oficial (mesmo nome) -->
+      <div class="hero__bg" data-asset="assets/images/escola.jpg" data-parallax="0.12" aria-hidden="true"></div>
+      <div class="hero__3d" id="hero-3d" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow"><span class="hero__pulse" aria-hidden="true"></span> Colatina – Espírito Santo</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="line-wrap"><span class="line hero__kicker">EEEFM</span></span>
+            <span class="line-wrap"><span class="line"><em>Honório Fraga</em></span></span>
+          </h1>
+          <p class="hero__lead">Educação que transforma, conhecimento que abre caminhos.</p>
+          <div class="hero__actions">
+            <a class="btn btn--light btn--lg" href="escola.html">Conheça a escola <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn--glass btn--lg" href="#noticias"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> Últimas notícias</a>
+          </div>
+        </div>
+        <div class="hero-stack" id="hero-stack" aria-label="Destaques da escola"></div>
+      </div>
+    </section>
+
+    <!-- ================= ACESSOS RÁPIDOS ================= -->
+    <section class="quick" id="acessos" aria-labelledby="acessos-title">
+      <div class="container">
+        <h2 class="sr-only" id="acessos-title">Acessos rápidos</h2>
+        <ul class="quick__grid" data-reveal-stagger>
+          <li><a class="quick-card quick-card--primary" href="alunos.html" data-tilt="6">
+            <span class="quick-card__icon"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i></span>
+            <span class="quick-card__text"><span class="quick-card__title">Portal do Aluno</span><span class="quick-card__desc">Boletim, frequência, horários, materiais e comunicados.</span></span>
+            <i class="fa-solid fa-arrow-right quick-card__arrow" aria-hidden="true"></i>
+          </a></li>
+          <li><a class="quick-card" href="responsaveis.html" data-tilt="6">
+            <span class="quick-card__icon"><i class="fa-solid fa-people-roof" aria-hidden="true"></i></span>
+            <span class="quick-card__text"><span class="quick-card__title">Área dos Responsáveis</span><span class="quick-card__desc">Comunicados, reuniões e acompanhamento escolar.</span></span>
+            <i class="fa-solid fa-arrow-right quick-card__arrow" aria-hidden="true"></i>
+          </a></li>
+          <li><a class="quick-card" href="documentos.html" data-tilt="6">
+            <span class="quick-card__icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></span>
+            <span class="quick-card__text"><span class="quick-card__title">Documentos</span><span class="quick-card__desc">Regimento, formulários e documentos oficiais.</span></span>
+            <i class="fa-solid fa-arrow-right quick-card__arrow" aria-hidden="true"></i>
+          </a></li>
+          <li><a class="quick-card" href="eventos.html#calendario" data-tilt="6">
+            <span class="quick-card__icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></span>
+            <span class="quick-card__text"><span class="quick-card__title">Calendário Escolar</span><span class="quick-card__desc">Provas, reuniões, feriados e atividades.</span></span>
+            <i class="fa-solid fa-arrow-right quick-card__arrow" aria-hidden="true"></i>
+          </a></li>
+          <li><a class="quick-card" href="noticias.html" data-tilt="6">
+            <span class="quick-card__icon"><i class="fa-solid fa-newspaper" aria-hidden="true"></i></span>
+            <span class="quick-card__text"><span class="quick-card__title">Notícias</span><span class="quick-card__desc">Acontecimentos e novidades da escola.</span></span>
+            <i class="fa-solid fa-arrow-right quick-card__arrow" aria-hidden="true"></i>
+          </a></li>
+          <li><a class="quick-card" href="eventos.html" data-tilt="6">
+            <span class="quick-card__icon"><i class="fa-solid fa-star" aria-hidden="true"></i></span>
+            <span class="quick-card__text"><span class="quick-card__title">Eventos</span><span class="quick-card__desc">Atividades acadêmicas, culturais e esportivas.</span></span>
+            <i class="fa-solid fa-arrow-right quick-card__arrow" aria-hidden="true"></i>
+          </a></li>
+          <li><a class="quick-card" href="contato.html" data-tilt="6">
+            <span class="quick-card__icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></span>
+            <span class="quick-card__text"><span class="quick-card__title">Contato</span><span class="quick-card__desc">Endereço, telefone, e-mail e ouvidoria.</span></span>
+            <i class="fa-solid fa-arrow-right quick-card__arrow" aria-hidden="true"></i>
+          </a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= SOBRE A ESCOLA ================= -->
+    <section class="section" id="sobre" aria-labelledby="sobre-title">
+      <div class="container about">
+        <div class="about__media" data-reveal="left">
+          <div class="about__frame">
+            <img src="assets/images/escola.jpg" alt="Imagem ilustrativa da escola (substituir por foto oficial)" width="1600" height="900" loading="lazy">
+            <span class="about__frame-tag">Imagem ilustrativa</span>
+          </div>
+          <div class="about__badge">
+            <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+            <div><strong>Escola pública estadual</strong><span>Colatina – Espírito Santo</span></div>
+          </div>
+        </div>
+        <div class="about__text" data-reveal="right">
+          <span class="eyebrow">A escola</span>
+          <h2 id="sobre-title">Escola Estadual de Ensino Fundamental e Médio Honório Fraga</h2>
+          <p class="placeholder-note"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> <span>Texto provisório — substitua pela apresentação oficial da escola.</span></p>
+          <p class="lead">Conheça a EEEFM Honório Fraga, sua história, proposta pedagógica, comunidade escolar e os projetos desenvolvidos ao longo do ano.</p>
+          <ul class="about__pillars">
+            <li><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i><div><strong>Proposta pedagógica</strong><span>[DESCREVER A PROPOSTA PEDAGÓGICA DA ESCOLA]</span></div></li>
+            <li><i class="fa-solid fa-people-group" aria-hidden="true"></i><div><strong>Comunidade escolar</strong><span>[DESCREVER A RELAÇÃO COM ESTUDANTES, FAMÍLIAS E COMUNIDADE]</span></div></li>
+            <li><i class="fa-solid fa-seedling" aria-hidden="true"></i><div><strong>Projetos</strong><span>[DESCREVER OS PRINCIPAIS PROJETOS DESENVOLVIDOS]</span></div></li>
+          </ul>
+          <a class="btn btn--primary btn--lg" href="escola.html">Conheça nossa escola <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NÚMEROS ================= -->
+    <section class="section stats-band" aria-labelledby="numeros-title">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Números da escola</span>
+          <h2 id="numeros-title">A escola em números</h2>
+          <p>Indicadores da comunidade escolar.</p>
+        </div>
+        <ul class="stats" id="stats-grid" data-reveal-stagger></ul>
+        <p class="stats-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Valores a serem informados pela escola — configure em <code>js/data.js</code> (SITE_CONFIG.numeros).</p>
+      </div>
+    </section>
+
+    <!-- ================= NOTÍCIAS ================= -->
+    <section class="section section--alt" id="noticias" aria-labelledby="noticias-title">
+      <div class="container">
+        <div class="section-head section-head--row" data-reveal>
+          <div><span class="eyebrow">Notícias</span><h2 id="noticias-title">Últimas notícias</h2></div>
+          <a class="btn btn--outline" href="noticias.html">Ver todas as notícias</a>
+        </div>
+        <div class="news-home" id="home-news" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ================= COMUNICADOS + EVENTOS ================= -->
+    <section class="section" aria-label="Comunicados e próximos eventos">
+      <div class="container split">
+        <div class="split__col" id="comunicados" data-reveal>
+          <div class="split__head"><div><span class="eyebrow">Comunicados</span><h2>Avisos da escola</h2></div><a class="link-arrow" href="responsaveis.html">Área dos responsáveis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+          <ul class="notice-list" id="home-comunicados"></ul>
+        </div>
+        <div class="split__col" data-reveal>
+          <div class="split__head"><div><span class="eyebrow">Agenda</span><h2>Próximos eventos</h2></div><a class="link-arrow" href="eventos.html#calendario">Ver calendário <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+          <div class="events-list" id="home-events"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETOS (carrossel) ================= -->
+    <section class="section section--soft" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section-head section-head--row" data-reveal>
+          <div><span class="eyebrow">Projetos</span><h2 id="projetos-title">Projetos da escola</h2></div>
+          <a class="btn btn--outline" href="projetos.html">Todos os projetos</a>
+        </div>
+        <div class="carousel" id="home-projects" aria-label="Projetos em destaque"></div>
+      </div>
+    </section>
+
+    <!-- ================= GALERIA ================= -->
+    <section class="section" aria-labelledby="galeria-title">
+      <div class="container">
+        <div class="section-head section-head--row" data-reveal>
+          <div><span class="eyebrow">Galeria</span><h2 id="galeria-title">Momentos da escola</h2><p>Imagens ilustrativas — substitua por fotos oficiais autorizadas.</p></div>
+          <a class="btn btn--outline" href="escola.html#galeria">Ver galeria completa</a>
+        </div>
+        <div id="home-gallery"></div>
+      </div>
+    </section>
+
+    <!-- ================= CHAMADA ================= -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="cta" data-reveal="zoom">
+          <div>
+            <h2>Fale com a escola</h2>
+            <p>Dúvidas, sugestões, elogios ou solicitações? Use a página de contato ou a ouvidoria.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="contato.html"><i class="fa-solid fa-headset" aria-hidden="true"></i> Contato</a>
+            <a class="btn btn--glass" href="ouvidoria.html"><i class="fa-regular fa-comments" aria-hidden="true"></i> Ouvidoria</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- scripts -->
+  <!-- Bibliotecas externas (opcionais: o site funciona sem elas, apenas sem animações/3D) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <!-- Scripts do site -->
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/galeria.js" defer></script>
+  <script src="js/noticias.js" defer></script>
+  <script src="js/eventos.js" defer></script>
+  <script src="js/calendario.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/pages.js" defer></script>
+  <script src="js/hero3d.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+/* =====================================================================
+   footer.css — RODAPÉ
+   ===================================================================== */
+.site-footer {
+  position: relative; margin-top: 0; color: var(--c-on-deep-muted);
+  background: linear-gradient(180deg, var(--c-deep-2) -40%, var(--c-deep-1) 55%);
+  padding-top: clamp(56px, 8vw, 88px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  overflow: hidden; isolation: isolate;
+}
+/* Linhas onduladas discretas (lembrança do Rio Doce) */
+.footer__wave {
+  position: absolute; inset: 0 0 auto; height: 120px; z-index: -1; opacity: .5; pointer-events: none;
+  background:
+    radial-gradient(60% 120px at 20% 0%, rgba(79, 214, 156, .18), transparent 70%),
+    radial-gradient(50% 140px at 85% 0%, rgba(127, 178, 255, .2), transparent 70%);
+}
+.footer__grid { display: grid; gap: 36px; grid-template-columns: 1fr; padding-bottom: 48px; }
+.footer__col { min-width: 0; }
+.footer__title {
+  font-family: var(--font-mono); font-size: var(--fs-xs); font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--c-hero-accent); margin: 0 0 16px;
+}
+.brand--footer { color: #fff; margin-bottom: 16px; }
+.brand--footer:hover { color: #fff; }
+.brand--footer .brand__place { color: var(--c-hero-accent); }
+.footer__about { font-size: var(--fs-sm); max-width: 38ch; }
+.footer__hint { font-size: var(--fs-xs); opacity: .8; }
+.footer__hint code { background: rgba(255, 255, 255, .08); color: var(--c-on-deep); }
+.footer__social { display: flex; gap: 10px; }
+.footer__social a { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255, 255, 255, .08); color: #fff; transition: background-color .2s, transform .2s var(--ease); }
+.footer__social a:hover { background: var(--c-accent); transform: translateY(-2px); }
+
+.footer__links { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+.footer__links a { display: inline-flex; align-items: center; min-height: 36px; color: var(--c-on-deep); text-decoration: none; font-size: var(--fs-sm); transition: color .2s, transform .2s var(--ease); }
+.footer__links a:hover { color: #fff; transform: translateX(4px); text-decoration: underline; }
+
+.footer__contact { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; font-size: var(--fs-sm); }
+.footer__contact li { display: flex; gap: 12px; align-items: flex-start; overflow-wrap: anywhere; }
+.footer__contact i { color: var(--c-hero-accent); margin-top: 4px; width: 16px; flex: none; text-align: center; }
+
+.footer__bottom { border-top: 1px solid rgba(255, 255, 255, .1); font-size: var(--fs-xs); }
+.footer__bottom-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-block: 20px; }
+.footer__bottom p { margin: 0; }
+.footer__legal a { color: var(--c-on-deep); text-decoration: none; }
+.footer__legal a:hover { color: #fff; text-decoration: underline; }

@@ -1,0 +1,39 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 478 >>
+stream
+BT /F1 20 Tf 60 760 Td (DOCUMENTO DE EXEMPLO - EEEFM Honorio Fraga) Tj ET
+BT /F1 13 Tf 60 720 Td () Tj ET
+BT /F1 13 Tf 60 698 Td (Este arquivo e apenas um modelo de demonstracao.) Tj ET
+BT /F1 13 Tf 60 676 Td (Substitua-o pelo documento oficial da escola.) Tj ET
+BT /F1 13 Tf 60 654 Td () Tj ET
+BT /F1 13 Tf 60 632 Td (Local: assets/documentos/) Tj ET
+BT /F1 13 Tf 60 610 Td (Cadastre o novo arquivo em js/data.js (DOCUMENTOS).) Tj ET
+0.08 0.31 0.71 RG 4 w 60 780 m 535 780 l S
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000769 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+839
+%%EOF

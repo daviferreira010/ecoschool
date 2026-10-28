@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Notícias | EEEFM Honório Fraga | Colatina - ES</title>
+  <meta name="description" content="Notícias da EEEFM Honório Fraga, em Colatina – ES: eventos, projetos, comunicados e novidades.">
+  <meta name="theme-color" content="#0c3478">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph (redes sociais). Ao publicar, troque por URLs absolutas: https://SEU-DOMINIO/... -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="EEEFM Honório Fraga">
+  <meta property="og:title" content="Notícias | EEEFM Honório Fraga | Colatina - ES">
+  <meta property="og:description" content="Notícias da EEEFM Honório Fraga, em Colatina – ES: eventos, projetos, comunicados e novidades.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <!-- Fontes e ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Aplica o tema salvo antes de desenhar a página (evita "piscar") -->
+  <script>try{var t=JSON.parse(localStorage.getItem('hf_theme'));if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/noticias.css">
+  <link rel="stylesheet" href="css/eventos.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="noticias">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <header id="site-header"></header>
+  <noscript>
+    <div class="noscript">
+      <strong>O JavaScript está desativado.</strong> Algumas partes do site (notícias, eventos, menu) precisam dele. Links principais:
+      <nav aria-label="Menu alternativo">
+        <a href="index.html">Início</a><a href="escola.html">A Escola</a><a href="ensino.html">Ensino</a><a href="noticias.html">Notícias</a>
+        <a href="eventos.html">Eventos</a><a href="projetos.html">Projetos</a><a href="alunos.html">Alunos</a><a href="responsaveis.html">Responsáveis</a>
+        <a href="documentos.html">Documentos</a><a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </noscript>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Você está em">
+          <ol><li><a href="index.html">Início</a></li><li aria-current="page" id="crumb-current">Notícias</li></ol>
+        </nav>
+        <span class="eyebrow" data-reveal>Notícias</span>
+        <h1 data-reveal>Notícias da escola</h1>
+        <p data-reveal>Acontecimentos, comunicados e novidades da comunidade escolar.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="carousel carousel--single highlights" id="news-highlights" aria-label="Notícias em destaque"></div>
+
+        <div class="toolbar">
+          <div class="toolbar__row">
+            <div class="search">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+              <label class="sr-only" for="news-search">Buscar notícias</label>
+              <input type="search" id="news-search" placeholder="Buscar notícias..." autocomplete="off">
+            </div>
+            <span class="result-count" id="news-count" aria-live="polite"></span>
+          </div>
+          <div class="chips" id="news-filters" role="group" aria-label="Filtrar por categoria"></div>
+        </div>
+
+        <div class="news-grid" id="news-grid" aria-live="polite"></div>
+        <div class="load-more"><button type="button" class="btn btn--outline" id="news-more" hidden>Carregar mais notícias</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- scripts -->
+  <!-- Bibliotecas externas (opcionais: o site funciona sem elas, apenas sem animações/3D) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <!-- Scripts do site -->
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/galeria.js" defer></script>
+  <script src="js/noticias.js" defer></script>
+  <script src="js/eventos.js" defer></script>
+  <script src="js/calendario.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/pages.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

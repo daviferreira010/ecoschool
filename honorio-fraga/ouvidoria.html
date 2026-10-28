@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ouvidoria | EEEFM Honório Fraga | Colatina - ES</title>
+  <meta name="description" content="Ouvidoria da EEEFM Honório Fraga: envie sugestões, dúvidas, reclamações, elogios ou solicitações.">
+  <meta name="theme-color" content="#0c3478">
+  <meta name="robots" content="index, follow">
+  <!-- Open Graph (redes sociais). Ao publicar, troque por URLs absolutas: https://SEU-DOMINIO/... -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="EEEFM Honório Fraga">
+  <meta property="og:title" content="Ouvidoria | EEEFM Honório Fraga | Colatina - ES">
+  <meta property="og:description" content="Ouvidoria da EEEFM Honório Fraga: envie sugestões, dúvidas, reclamações, elogios ou solicitações.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <!-- Fontes e ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Aplica o tema salvo antes de desenhar a página (evita "piscar") -->
+  <script>try{var t=JSON.parse(localStorage.getItem('hf_theme'));if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/noticias.css">
+  <link rel="stylesheet" href="css/eventos.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="ouvidoria">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+  <header id="site-header"></header>
+  <noscript>
+    <div class="noscript">
+      <strong>O JavaScript está desativado.</strong> Algumas partes do site (notícias, eventos, menu) precisam dele. Links principais:
+      <nav aria-label="Menu alternativo">
+        <a href="index.html">Início</a><a href="escola.html">A Escola</a><a href="ensino.html">Ensino</a><a href="noticias.html">Notícias</a>
+        <a href="eventos.html">Eventos</a><a href="projetos.html">Projetos</a><a href="alunos.html">Alunos</a><a href="responsaveis.html">Responsáveis</a>
+        <a href="documentos.html">Documentos</a><a href="contato.html">Contato</a>
+      </nav>
+    </div>
+  </noscript>
+
+  <main id="conteudo" tabindex="-1">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Você está em">
+          <ol><li><a href="index.html">Início</a></li><li><a href="contato.html">Contato</a></li><li aria-current="page" id="crumb-current">Ouvidoria</li></ol>
+        </nav>
+        <span class="eyebrow" data-reveal>Ouvidoria</span>
+        <h1 data-reveal>Ouvidoria / Fale Conosco</h1>
+        <p data-reveal>Envie sugestões, dúvidas, reclamações, elogios ou solicitações à escola.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container contact-layout">
+        <div class="form-panel">
+          <h2>Registrar manifestação</h2>
+          <form class="form" id="ouvidoria-form" data-endpoint="/api/ouvidoria" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="o-nome">Nome <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="o-nome" name="nome" autocomplete="name" required minlength="3" maxlength="120">
+              </div>
+              <div class="field">
+                <label class="field__label" for="o-email">E-mail <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="o-email" name="email" autocomplete="email" inputmode="email" required maxlength="160">
+              </div>
+              <fieldset class="radio-cards">
+                <legend>Tipo de manifestação <span class="req" aria-hidden="true">*</span></legend>
+                  <label class="radio-card"><input type="radio" name="tipo" value="sugestao" required><span><i class="fa-solid fa-lightbulb" aria-hidden="true"></i>Sugestão</span></label>
+                  <label class="radio-card"><input type="radio" name="tipo" value="duvida" required><span><i class="fa-solid fa-circle-question" aria-hidden="true"></i>Dúvida</span></label>
+                  <label class="radio-card"><input type="radio" name="tipo" value="reclamacao" required><span><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>Reclamação</span></label>
+                  <label class="radio-card"><input type="radio" name="tipo" value="elogio" required><span><i class="fa-solid fa-thumbs-up" aria-hidden="true"></i>Elogio</span></label>
+                  <label class="radio-card"><input type="radio" name="tipo" value="solicitacao" required><span><i class="fa-solid fa-file-circle-plus" aria-hidden="true"></i>Solicitação</span></label>
+              </fieldset>
+              <div class="field field--full">
+                <label class="field__label" for="o-assunto">Assunto <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="o-assunto" name="assunto" required minlength="3" maxlength="150">
+              </div>
+              <div class="field field--full">
+                <label class="field__label" for="o-mensagem">Mensagem <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="o-mensagem" name="mensagem" rows="7" required minlength="10" maxlength="3000"></textarea>
+              </div>
+              <div class="hp" aria-hidden="true"><label for="o-website">Não preencha</label><input type="text" id="o-website" name="website" tabindex="-1" autocomplete="off"></div>
+              <div class="check">
+                <input type="checkbox" id="o-lgpd" name="consentimento" required>
+                <label for="o-lgpd">Declaro que li o aviso de privacidade e concordo com o tratamento dos meus dados para análise e resposta desta manifestação.</label>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary btn--lg"><i class="fa-regular fa-paper-plane" aria-hidden="true"></i> Enviar manifestação</button>
+              <button type="reset" class="btn btn--ghost btn--lg">Limpar</button>
+            </div>
+          </form>
+        </div>
+
+        <aside class="contact-side" aria-label="Informações sobre a ouvidoria">
+          <div class="privacy-box">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <div>
+              <p><strong>Aviso de privacidade</strong></p>
+              <p>Os dados informados serão usados apenas para analisar e responder à sua manifestação, conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+              <p>O acesso às manifestações deve ser restrito à equipe responsável. Saiba mais na <a href="privacidade.html">Política de Privacidade</a>.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Como funciona</h3>
+            <ol class="steps">
+              <li><div><strong>Você registra</strong><span>Escolha o tipo e descreva sua manifestação.</span></div></li>
+              <li><div><strong>A escola analisa</strong><span>A equipe responsável avalia o conteúdo.</span></div></li>
+              <li><div><strong>Você recebe a resposta</strong><span>Pelo e-mail informado. Prazo: [INSERIR PRAZO DE RESPOSTA].</span></div></li>
+            </ol>
+          </div>
+          <p class="notice notice--warning"><i class="fa-solid fa-server" aria-hidden="true"></i> <span>O envio real será implementado no backend (com número de protocolo). Por enquanto o formulário só valida os dados.</span></p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- scripts -->
+  <!-- Bibliotecas externas (opcionais: o site funciona sem elas, apenas sem animações/3D) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <!-- Scripts do site -->
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/galeria.js" defer></script>
+  <script src="js/noticias.js" defer></script>
+  <script src="js/eventos.js" defer></script>
+  <script src="js/calendario.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/pages.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

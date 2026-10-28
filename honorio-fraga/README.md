@@ -83,7 +83,7 @@ honorio-fraga/
 │   └── main.js           Inicialização
 │
 ├── assets/
-│   ├── images/           Fotos e logotipo (placeholders "IMAGEM ILUSTRATIVA")
+│   ├── images/           Logo oficial, fundo do topo e fotos (placeholders "IMAGEM ILUSTRATIVA")
 │   ├── icons/            Favicon e ícones
 │   └── documentos/       PDFs (há um documento-exemplo.pdf)
 │
@@ -107,14 +107,15 @@ Cada página HTML tem `<body data-page="...">`. O arquivo `js/main.js` usa esse 
 | Etapas de ensino e cursos | `js/data.js` → `ENSINO` |
 | Dados da LGPD (controlador, encarregado) | `js/data.js` → `SITE_CONFIG.lgpd` |
 | Mapa do Google | `js/data.js` → `SITE_CONFIG.contato.mapaEmbedURL` |
-| Cores do site | `css/style.css` → variáveis no início (`--c-primary`, `--c-accent`…) |
+| Cores do site (azul da logo `#0B24D8` + branco) | `css/style.css` → variáveis no início (`--c-primary`, `--c-accent`…) |
 | Itens do menu | `js/menu.js` → `NAV_ITEMS` |
 | Textos fixos (história, missão…) | nos próprios arquivos `.html` (procure por `[INSERIR`) |
 
 ### Imagens
 - Coloque as fotos em `assets/images/`.
 - **Foto principal:** substitua `assets/images/escola.jpg` mantendo o mesmo nome (sugestão: 1600×900 px, JPG até ~300 KB).
-- **Logotipo:** substitua `assets/images/logo.svg` (ou altere `SITE_CONFIG.logo`).
+- **Logotipo:** `assets/images/logo.png` (logo oficial, recortada em círculo com fundo transparente).
+- **Fundo do topo:** `assets/images/hero-fundo.jpg` (imagem fixa nas cores da logo; pode ser trocada).
 - Se uma imagem não existir, o site mostra automaticamente um placeholder "Imagem indisponível" (fallback em `js/utils.js`).
 - Publique fotos de estudantes **somente com autorização dos responsáveis** (LGPD/ECA).
 

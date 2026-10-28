@@ -172,7 +172,7 @@ const Layout = (() => {
             <img class="brand__logo" src="${asset(c.logo)}" alt="" width="46" height="46" data-fallback-label="Logo">
             <span class="brand__text"><span class="brand__name">EEEFM <strong>Honório Fraga</strong></span><span class="brand__place">${escapeHTML(c.cidade)} – ${escapeHTML(c.uf)}</span></span>
           </a>
-          <p class="footer__about">${escapeHTML(c.nomeCompleto)}. ${escapeHTML(c.slogan)}</p>
+          <p class="footer__about">${escapeHTML(c.nomeCompleto)}. <strong>${escapeHTML(c.lema)}</strong> Desde ${c.fundacao}.</p>
           ${redes.length ? `<div class="footer__social">${redes.map(([k, url]) => `<a href="${escapeHTML(url)}" target="_blank" rel="noopener" aria-label="${k}"><i class="fa-brands ${redesIcon[k]}" aria-hidden="true"></i></a>`).join('')}</div>`
             : '<p class="footer__hint">Redes sociais: configure em <code>js/data.js</code>.</p>'}
         </div>

@@ -41,7 +41,7 @@ body:not(.admin-body)::before {
 
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--c-ink); min-width: 0; }
 .brand:hover { color: var(--c-ink); }
-.brand__logo { width: 44px; height: 44px; flex: none; border-radius: 12px; object-fit: contain; transition: transform .5s var(--ease); }
+.brand__logo { width: 46px; height: 46px; flex: none; border-radius: 50%; object-fit: contain; transition: transform .5s var(--ease); }
 .brand:hover .brand__logo { transform: rotate(-6deg) scale(1.05); }
 .brand__text { display: grid; line-height: 1.1; min-width: 0; }
 .brand__name { font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; letter-spacing: -.01em; white-space: nowrap; }

@@ -22,10 +22,13 @@ const SITE_CONFIG = {
   uf: 'ES',
   estado: 'Espírito Santo',
   slogan: 'Educação que transforma, conhecimento que abre caminhos.',
+  // Lema e ano de fundação conforme o logotipo oficial da escola
+  lema: 'Educando para o mundo!',
+  fundacao: 1962,
   anoCopyright: 2026,
 
   // Caminhos de imagens institucionais (substitua os arquivos mantendo o nome)
-  logo: 'assets/images/logo.svg',
+  logo: 'assets/images/logo.png',
   fotoPrincipal: 'assets/images/escola.jpg',
 
   // CONTATO — preencha com os dados oficiais
@@ -68,7 +71,8 @@ const SITE_CONFIG = {
     { icone: 'fa-chalkboard-user', rotulo: 'Professores', valor: null, sufixo: '' },
     { icone: 'fa-people-group', rotulo: 'Turmas', valor: null, sufixo: '' },
     { icone: 'fa-lightbulb', rotulo: 'Projetos', valor: null, sufixo: '' },
-    { icone: 'fa-calendar-check', rotulo: 'Anos de atuação', valor: null, sufixo: '' }
+    // Calculado a partir do ano de fundação (1962, conforme o logotipo)
+    { icone: 'fa-calendar-check', rotulo: 'Anos de atuação', valor: new Date().getFullYear() - 1962, sufixo: '' }
   ]
 };
 

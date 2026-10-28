@@ -12,59 +12,59 @@
 
 :root {
   /* Marca */
-  --c-primary: #1450b4;          /* azul institucional (fundos de botões) */
-  --c-primary-strong: #0d3a8a;   /* azul profundo (hover, títulos de destaque) */
-  --c-primary-text: #1450b4;     /* azul para textos/links */
-  --c-primary-soft: #e6eefc;     /* azul claríssimo (fundos suaves) */
-  --c-accent: #12875a;           /* verde complementar */
-  --c-accent-text: #0e7a50;
-  --c-accent-soft: #e0f4ea;
+  --c-primary: #0b24d8;          /* azul institucional (fundos de botões) */
+  --c-primary-strong: #0718a0;   /* azul profundo (hover, títulos de destaque) */
+  --c-primary-text: #0b24d8;     /* azul para textos/links */
+  --c-primary-soft: #e8ebfd;     /* azul claríssimo (fundos suaves) */
+  --c-accent: #2b47e8;           /* verde complementar */
+  --c-accent-text: #1530c9;
+  --c-accent-soft: #eef1ff;
   --c-on-primary: #ffffff;
 
   /* Neutros com leve tom azulado */
-  --c-bg: #f4f7fc;
+  --c-bg: #f5f6fc;
   --c-surface: #ffffff;
-  --c-surface-2: #edf2fa;
-  --c-line: #d9e2ef;
-  --c-ink: #0b1b36;              /* títulos */
-  --c-text: #26344d;             /* texto corrido */
-  --c-muted: #5a6884;            /* textos secundários */
+  --c-surface-2: #eef0fa;
+  --c-line: #d9def2;
+  --c-ink: #0a1240;              /* títulos */
+  --c-text: #262f52;             /* texto corrido */
+  --c-muted: #575f86;            /* textos secundários */
 
   /* Hero e rodapé (sempre escuros, nos dois temas) */
-  --c-deep-1: #061a40;
-  --c-deep-2: #0c3478;
-  --c-on-deep: #eef4ff;
-  --c-on-deep-muted: #b5c6e6;
-  --c-hero-node: #7fb2ff;
-  --c-hero-accent: #4fd69c;
-  --c-hero-wave: #8fbaff;
+  --c-deep-1: #050f5e;
+  --c-deep-2: #0b24d8;
+  --c-on-deep: #f2f4ff;
+  --c-on-deep-muted: #c3cbf5;
+  --c-hero-node: #ffffff;
+  --c-hero-accent: #b4c0ff;
+  --c-hero-wave: #9aa9ff;
 
   /* Semânticas */
-  --c-success: #12875a;
+  --c-success: #0b24d8;
   --c-warning: #9a5b00;
   --c-warning-soft: #fdf1dc;
   --c-danger: #c0362c;
   --c-danger-soft: #fde7e5;
-  --c-info: #1450b4;
+  --c-info: #0b24d8;
 
   /* Categorias de eventos / calendário */
-  --c-cat-academico: #1450b4;
-  --c-cat-esportivo: #0e8a6a;
+  --c-cat-academico: #0b24d8;
+  --c-cat-esportivo: #0a6fb8;
   --c-cat-cultural: #8a3ab9;
   --c-cat-reuniao: #b25d00;
   --c-cat-comunicado: #5a6884;
-  --c-cat-projeto: #12875a;
-  --c-cal-evento: #1450b4;
+  --c-cat-projeto: #4a2fd0;
+  --c-cal-evento: #0b24d8;
   --c-cal-prova: #c0362c;
   --c-cal-reuniao: #b25d00;
-  --c-cal-feriado: #12875a;
+  --c-cal-feriado: #0a6fb8;
   --c-cal-atividade: #8a3ab9;
 
   /* Sombras */
   --shadow-sm: 0 1px 2px rgba(11, 27, 54, .06), 0 1px 3px rgba(11, 27, 54, .06);
   --shadow-md: 0 6px 18px -6px rgba(11, 27, 54, .14), 0 2px 6px rgba(11, 27, 54, .05);
   --shadow-lg: 0 24px 48px -16px rgba(11, 27, 54, .25);
-  --overlay: rgba(6, 18, 40, .62);
+  --overlay: rgba(4, 10, 50, .62);
 
   /* Tipografia */
   --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -96,37 +96,37 @@
 /* ---------- Tema escuro (sistema) ---------- */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --c-primary: #2d6be0;
-    --c-primary-strong: #5b90f0;
-    --c-primary-text: #8db7ff;
-    --c-primary-soft: #14264a;
-    --c-accent: #15925f;
-    --c-accent-text: #52d69e;
-    --c-accent-soft: #0f2f25;
-    --c-bg: #08111f;
-    --c-surface: #0f1a2e;
-    --c-surface-2: #15233c;
-    --c-line: #233452;
-    --c-ink: #eef3fc;
-    --c-text: #cfd9ea;
-    --c-muted: #93a4c2;
-    --c-deep-1: #040d20;
-    --c-deep-2: #0a2658;
+    --c-primary: #3550f2;
+    --c-primary-strong: #6f84ff;
+    --c-primary-text: #a3b2ff;
+    --c-primary-soft: #131c5e;
+    --c-accent: #3550f2;
+    --c-accent-text: #b9c4ff;
+    --c-accent-soft: #141e64;
+    --c-bg: #050a26;
+    --c-surface: #0b1238;
+    --c-surface-2: #111a4a;
+    --c-line: #232e68;
+    --c-ink: #eef0ff;
+    --c-text: #cfd5f2;
+    --c-muted: #99a2cc;
+    --c-deep-1: #030828;
+    --c-deep-2: #0a1a9e;
     --c-warning: #f2b552;
     --c-warning-soft: #33260e;
     --c-danger: #ff8077;
     --c-danger-soft: #3a1714;
-    --c-info: #8db7ff;
-    --c-cat-academico: #8db7ff;
-    --c-cat-esportivo: #4fd0ad;
+    --c-info: #a3b2ff;
+    --c-cat-academico: #a3b2ff;
+    --c-cat-esportivo: #6cc4ff;
     --c-cat-cultural: #d39af5;
     --c-cat-reuniao: #f2b552;
     --c-cat-comunicado: #a7b5cf;
-    --c-cat-projeto: #52d69e;
-    --c-cal-evento: #6fa3ff;
+    --c-cat-projeto: #b9a6ff;
+    --c-cal-evento: #8c9dff;
     --c-cal-prova: #ff8077;
     --c-cal-reuniao: #f2b552;
-    --c-cal-feriado: #52d69e;
+    --c-cal-feriado: #6cc4ff;
     --c-cal-atividade: #d39af5;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
     --shadow-md: 0 8px 20px -8px rgba(0, 0, 0, .6);
@@ -138,37 +138,37 @@
 
 /* ---------- Tema escuro (escolhido no botão) ---------- */
 :root[data-theme="dark"] {
-  --c-primary: #2d6be0;
-  --c-primary-strong: #5b90f0;
-  --c-primary-text: #8db7ff;
-  --c-primary-soft: #14264a;
-  --c-accent: #15925f;
-  --c-accent-text: #52d69e;
-  --c-accent-soft: #0f2f25;
-  --c-bg: #08111f;
-  --c-surface: #0f1a2e;
-  --c-surface-2: #15233c;
-  --c-line: #233452;
-  --c-ink: #eef3fc;
-  --c-text: #cfd9ea;
-  --c-muted: #93a4c2;
-  --c-deep-1: #040d20;
-  --c-deep-2: #0a2658;
+  --c-primary: #3550f2;
+  --c-primary-strong: #6f84ff;
+  --c-primary-text: #a3b2ff;
+  --c-primary-soft: #131c5e;
+  --c-accent: #3550f2;
+  --c-accent-text: #b9c4ff;
+  --c-accent-soft: #141e64;
+  --c-bg: #050a26;
+  --c-surface: #0b1238;
+  --c-surface-2: #111a4a;
+  --c-line: #232e68;
+  --c-ink: #eef0ff;
+  --c-text: #cfd5f2;
+  --c-muted: #99a2cc;
+  --c-deep-1: #030828;
+  --c-deep-2: #0a1a9e;
   --c-warning: #f2b552;
   --c-warning-soft: #33260e;
   --c-danger: #ff8077;
   --c-danger-soft: #3a1714;
-  --c-info: #8db7ff;
-  --c-cat-academico: #8db7ff;
-  --c-cat-esportivo: #4fd0ad;
+  --c-info: #a3b2ff;
+  --c-cat-academico: #a3b2ff;
+  --c-cat-esportivo: #6cc4ff;
   --c-cat-cultural: #d39af5;
   --c-cat-reuniao: #f2b552;
   --c-cat-comunicado: #a7b5cf;
-  --c-cat-projeto: #52d69e;
-  --c-cal-evento: #6fa3ff;
+  --c-cat-projeto: #b9a6ff;
+  --c-cal-evento: #8c9dff;
   --c-cal-prova: #ff8077;
   --c-cal-reuniao: #f2b552;
-  --c-cal-feriado: #52d69e;
+  --c-cal-feriado: #6cc4ff;
   --c-cal-atividade: #d39af5;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
   --shadow-md: 0 8px 20px -8px rgba(0, 0, 0, .6);
@@ -405,7 +405,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--c-surf
 }
 .page-hero::after {
   content: ""; position: absolute; right: -120px; bottom: -160px; width: 420px; height: 420px; z-index: -1;
-  border-radius: 50%; background: radial-gradient(circle, rgba(79, 214, 156, .28), transparent 65%);
+  border-radius: 50%; background: radial-gradient(circle, rgba(150, 168, 255, .3), transparent 65%);
 }
 .page-hero h1 { color: #fff; margin: 10px 0 12px; max-width: 18ch; }
 .page-hero p { color: var(--c-on-deep-muted); font-size: var(--fs-md); max-width: 60ch; margin: 0; }

@@ -48,35 +48,50 @@
   </noscript>
 
   <main id="conteudo" tabindex="-1">
-    <!-- ================= HERO (com cena 3D) ================= -->
-    <section class="hero" aria-labelledby="hero-title">
-      <!-- Imagem fixa de fundo nas cores da logo: assets/images/hero-fundo.jpg (pode ser trocada) -->
-      <div class="hero__bg" data-asset="assets/images/hero-fundo.jpg" aria-hidden="true"></div>
-      <div class="hero__3d" id="hero-3d" aria-hidden="true"></div>
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <p class="hero__eyebrow"><span class="hero__pulse" aria-hidden="true"></span> Colatina – Espírito Santo</p>
-          <h1 class="hero__title" id="hero-title">
-            <span class="line-wrap"><span class="line hero__kicker">EEEFM</span></span>
-            <span class="line-wrap"><span class="line"><em>Honório Fraga</em></span></span>
-          </h1>
-          <p class="hero__lead">Educação que transforma, conhecimento que abre caminhos.</p>
-          <p class="hero__motto"><i class="fa-solid fa-star" aria-hidden="true"></i> Educando para o mundo! <span aria-hidden="true">·</span> Desde 1962</p>
-          <div class="hero__actions">
-            <a class="btn btn--light btn--lg" href="escola.html">Conheça a escola <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-            <a class="btn btn--glass btn--lg" href="#noticias"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> Últimas notícias</a>
+    <!-- =================================================================
+         TOPO DA HOME: duas telas cheias sobre o mesmo fundo azul FIXO
+         1) Identidade visual da escola (logo, nome, lema)
+         2) Carrossel "Acontece na escola" (notícias recentes)
+         Fundo: assets/images/hero-fundo.jpg (pode ser trocado)
+         ================================================================= -->
+    <div class="home-stage">
+      <div class="home-stage__bg" data-asset="assets/images/hero-fundo.jpg" aria-hidden="true"></div>
+
+      <!-- ---------- 1) IDENTIDADE ---------- -->
+      <section class="identity" aria-labelledby="hero-title">
+        <div class="identity__3d" id="hero-3d" aria-hidden="true"></div>
+        <div class="container identity__inner">
+          <div class="identity__seal" id="identity-seal">
+            <span class="identity__ring identity__ring--1" aria-hidden="true"></span>
+            <span class="identity__ring identity__ring--2" aria-hidden="true"></span>
+            <span class="identity__orbit" aria-hidden="true"><i></i></span>
+            <img class="identity__logo" src="assets/images/logo.png" alt="Logotipo da EEEFM Honório Fraga" width="256" height="256" data-tilt="14">
+          </div>
+          <div class="identity__text">
+            <p class="identity__kicker">Escola Estadual de Ensino Fundamental e Médio</p>
+            <h1 class="identity__title" id="hero-title">
+              <span class="line-wrap"><span class="line identity__eeefm">EEEFM</span></span>
+              <span class="line-wrap"><span class="line">Honório Fraga</span></span>
+            </h1>
+            <p class="identity__motto"><i class="fa-solid fa-star" aria-hidden="true"></i> Educando para o mundo! <i class="fa-solid fa-star" aria-hidden="true"></i></p>
+            <p class="identity__place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Colatina – Espírito Santo <span aria-hidden="true">·</span> Desde 1962</p>
+            <p class="identity__lead">Educação que transforma, conhecimento que abre caminhos.</p>
+            <div class="identity__actions">
+              <a class="btn btn--light btn--lg" href="escola.html">Conheça a escola <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+              <a class="btn btn--glass btn--lg" href="#acontece"><i class="fa-regular fa-newspaper" aria-hidden="true"></i> Acontece na escola</a>
+            </div>
           </div>
         </div>
-        <!-- Carrossel "Acontece na escola": mostra as notícias mais recentes (js/pages.js) -->
-        <div class="hero-side">
-          <div class="hero-news">
-            <p class="hero-news__label"><span class="hero__pulse" aria-hidden="true"></span> Acontece na escola</p>
-            <div class="carousel carousel--single hero-news__carousel" id="hero-news" aria-label="Notícias recentes"></div>
-          </div>
-          <div class="hero-stack" id="hero-stack" aria-label="Agenda e avisos"></div>
-        </div>
-      </div>
-    </section>
+        <a class="identity__scroll" href="#acontece"><span aria-hidden="true"></span>Notícias</a>
+      </section>
+
+      <!-- ---------- 2) CARROSSEL EM TELA CHEIA ---------- -->
+      <section class="news-stage" id="acontece" aria-labelledby="acontece-title">
+        <h2 class="sr-only" id="acontece-title">Acontece na escola</h2>
+        <!-- Os slides são criados por js/pages.js com as 5 notícias publicadas mais recentes -->
+        <div class="stage" id="news-stage" aria-roledescription="carrossel" aria-label="Notícias recentes da escola"></div>
+      </section>
+    </div>
 
     <!-- ================= ACESSOS RÁPIDOS ================= -->
     <section class="quick" id="acessos" aria-labelledby="acessos-title">

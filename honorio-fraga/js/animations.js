@@ -131,17 +131,19 @@ const Anim = (() => {
   function heroIntro() {
     if (prefersReducedMotion() || !hasGSAP()) return;
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl.from('.hero__eyebrow', { y: 20, opacity: 0, duration: 0.6 })
-      .from('.hero__title .line', { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.12 }, '-=0.3')
-      .from('.hero__lead', { y: 20, opacity: 0, duration: 0.7 }, '-=0.5')
-      .from('.hero__actions > *', { y: 16, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.4')
-      .from('.hero-news', { y: 50, rotateY: -20, opacity: 0, duration: 1, clearProps: 'transform,opacity' }, '-=0.6')
-      .from('.hero-stack__card', { y: 30, opacity: 0, duration: 0.7, stagger: 0.12, clearProps: 'transform,opacity' }, '-=0.5');
+    // Logo "gira" como uma moeda e entra; depois o texto sobe em sequência
+    tl.from('.identity__logo', { rotateY: -180, scale: 0.6, opacity: 0, duration: 1.4, ease: 'expo.out', clearProps: 'transform,opacity' })
+      .from('.identity__ring, .identity__orbit', { opacity: 0, duration: 1, stagger: 0.12 }, '-=1.1')
+      .from('.identity__kicker', { y: 16, opacity: 0, duration: 0.5 }, '-=0.8')
+      .from('.identity__title .line', { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.1 }, '-=0.45')
+      .from('.identity__motto, .identity__place, .identity__lead', { y: 16, opacity: 0, duration: 0.6, stagger: 0.08 }, '-=0.5')
+      .from('.identity__actions > *', { y: 16, opacity: 0, duration: 0.5, stagger: 0.1 }, '-=0.4')
+      .from('.identity__scroll', { opacity: 0, duration: 0.6 }, '-=0.2');
 
-    // O conteúdo do hero se afasta levemente ao rolar (profundidade)
-    gsap.to('.hero__content', {
-      y: -60, opacity: 0.3, ease: 'none',
-      scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    // Ao rolar, a identidade se afasta e o carrossel assume a tela
+    gsap.to('.identity__inner', {
+      y: -90, opacity: 0.15, ease: 'none',
+      scrollTrigger: { trigger: '.identity', start: 'top top', end: 'bottom top', scrub: true }
     });
   }
 
@@ -262,4 +264,107 @@ class Carousel {
   play() { if (this.autoplay && !this.timer) this.timer = setInterval(() => this.go(this.index + 1), this.autoplay); }
   stop() { clearInterval(this.timer); this.timer = null; }
   restart() { this.stop(); this.play(); }
+}
+
+/* =====================================================================
+   CARROSSEL EM TELA CHEIA ("Acontece na escola" — página inicial)
+   Uso: new StageCarousel(elemento, { duration: 7000 })
+   - Troca com fade; o texto entra em sequência (CSS)
+   - Barra de progresso por notícia; ao terminar, passa para a próxima
+   - Pausa: botão, mouse em cima, foco do teclado
+   - Setas, toque (swipe) e teclas ← →
+   - Com "reduzir movimento" ativo, não troca sozinho
+   ===================================================================== */
+class StageCarousel {
+  constructor(root, { duration = 7000 } = {}) {
+    this.root = root;
+    this.slides = Array.from(root.querySelectorAll('.stage__slide'));
+    this.segs = Array.from(root.querySelectorAll('.stage__seg'));
+    this.counter = root.querySelector('.stage__counter b');
+    this.live = root.querySelector('.stage__slides');
+    this.pauseBtn = root.querySelector('[data-stage="pause"]');
+    this.index = 0;
+    this.reduce = Utils.prefersReducedMotion();
+    this.userPaused = this.reduce;
+    this.hoverPaused = false;
+    if (!this.slides.length) return;
+    root.style.setProperty('--stage-duration', `${duration}ms`);
+    root.classList.toggle('is-reduced', this.reduce);
+    if (this.slides.length < 2) root.classList.add('is-single');
+    this.bind();
+    this.go(0);
+  }
+
+  go(i) {
+    const n = this.slides.length;
+    this.index = (i + n) % n;
+    this.slides.forEach((s, k) => {
+      const on = k === this.index;
+      s.classList.toggle('is-active', on);
+      s.setAttribute('aria-hidden', String(!on));
+      s.inert = !on;
+    });
+    this.segs.forEach((b, k) => {
+      b.classList.toggle('is-done', k < this.index);
+      b.classList.toggle('is-active', k === this.index);
+      b.setAttribute('aria-current', k === this.index ? 'true' : 'false');
+      // reinicia a animação da barra de progresso
+      const fill = b.querySelector('span');
+      fill.style.animation = 'none';
+      void fill.offsetWidth;
+      fill.style.animation = '';
+    });
+    if (this.counter) this.counter.textContent = String(this.index + 1).padStart(2, '0');
+    this.sync();
+  }
+
+  sync() {
+    const paused = this.userPaused || this.hoverPaused;
+    this.root.classList.toggle('is-paused', paused);
+    // leitores de tela anunciam a troca só quando o usuário controla
+    this.live.setAttribute('aria-live', paused ? 'polite' : 'off');
+    if (this.pauseBtn) {
+      this.pauseBtn.setAttribute('aria-label', this.userPaused ? 'Retomar troca automática' : 'Pausar troca automática');
+      // troca só a classe do ícone (recriar o elemento faria o clique se perder)
+      const icon = this.pauseBtn.querySelector('i');
+      if (icon) icon.className = `fa-solid ${this.userPaused ? 'fa-play' : 'fa-pause'}`;
+      this.pauseBtn.setAttribute('aria-pressed', String(this.userPaused));
+    }
+  }
+
+  bind() {
+    const r = this.root;
+    r.addEventListener('click', (e) => {
+      const seg = e.target.closest('.stage__seg');
+      const ctl = e.target.closest('[data-stage]');
+      if (seg) this.go(this.segs.indexOf(seg));
+      else if (ctl && ctl.dataset.stage === 'prev') this.go(this.index - 1);
+      else if (ctl && ctl.dataset.stage === 'next') this.go(this.index + 1);
+      else if (ctl && ctl.dataset.stage === 'pause') { this.userPaused = !this.userPaused; this.sync(); }
+    });
+    // fim da barra de progresso = próxima notícia
+    r.addEventListener('animationend', (e) => {
+      if (e.animationName !== 'stageFill' || this.reduce) return;
+      if (e.target.parentElement === this.segs[this.index]) this.go(this.index + 1);
+    });
+    if (window.matchMedia('(hover: hover)').matches) {
+      r.addEventListener('mouseenter', () => { this.hoverPaused = true; this.sync(); });
+      r.addEventListener('mouseleave', () => { this.hoverPaused = false; this.sync(); });
+    }
+    r.addEventListener('focusin', () => { this.hoverPaused = true; this.sync(); });
+    r.addEventListener('focusout', (e) => { if (!r.contains(e.relatedTarget)) { this.hoverPaused = false; this.sync(); } });
+    r.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); this.go(this.index - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); this.go(this.index + 1); }
+    });
+    // swipe horizontal (a rolagem vertical continua livre)
+    let sx = null, sy = null;
+    r.addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; });
+    r.addEventListener('pointerup', (e) => {
+      if (sx === null) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) this.go(this.index + (dx < 0 ? 1 : -1));
+      sx = sy = null;
+    });
+  }
 }

@@ -13,7 +13,7 @@
 @media (max-width: 379.98px) {
   .brand__name { font-size: .95rem; }
   .brand__logo { width: 38px; height: 38px; }
-  .hero__actions .btn { width: 100%; }
+  .identity__actions .btn { width: 100%; }
   .theme-toggle { display: none; }
   .news-card--compact .news-card__media { display: none; }
   .calendar__day { min-height: 42px; }
@@ -35,12 +35,11 @@
   .form-grid .field--full, .form-grid .check, .form-grid fieldset { grid-column: 1 / -1; }
   .stats { grid-template-columns: repeat(3, 1fr); }
   .stat:last-child:nth-child(odd) { grid-column: auto; }
-  .hero-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 /* ---------- ≥ 720px (tablet) ---------- */
 @media (min-width: 720px) {
-  :root { --header-h: 76px; }
+  :root { --header-h: 76px; --header-total: calc(var(--header-h) + 36px); }
   .topbar { display: block; }
   .section-head--row { grid-template-columns: 1fr auto; }
   .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -78,11 +77,6 @@
 
 /* ---------- ≥ 992px (notebook) ---------- */
 @media (min-width: 992px) {
-  .hero__inner { grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr); gap: 56px; }
-  /* carrossel do hero levemente inclinado em 3D; endireita ao passar o mouse */
-  .hero-side { perspective: 1400px; }
-  .hero-news { transform: rotateY(-9deg) rotateX(3deg); transition: transform .8s var(--ease); }
-  .hero-side:hover .hero-news, .hero-news:focus-within { transform: none; }
   .about { grid-template-columns: 1fr 1fr; gap: 72px; }
   .news-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .calendar { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; }
@@ -127,7 +121,7 @@
 
 /* ---------- Impressão ---------- */
 @media print {
-  .site-header, .site-footer, .back-to-top, .alert-bar, .hero__3d, .carousel__controls, .toast-stack { display: none !important; }
+  .site-header, .site-footer, .back-to-top, .alert-bar, .identity__3d, .stage__bottom, .carousel__controls, .toast-stack { display: none !important; }
   body { background: #fff; color: #000; }
   .page-hero { background: none; color: #000; padding: 0 0 16px; }
   .page-hero h1 { color: #000; }

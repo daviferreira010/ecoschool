@@ -44,47 +44,54 @@ const Pages = (() => {
         </li>`).join('');
     }
 
-    // Carrossel de notícias do hero ("Acontece na escola")
-    const heroNews = qs('#hero-news');
-    if (heroNews) {
+    // Carrossel em tela cheia "Acontece na escola" (5 notícias mais recentes)
+    const stage = qs('#news-stage');
+    if (stage) {
       const lista = (await API.noticiasPublicadas()).slice(0, 5);
-      if (lista.length) {
-        heroNews.innerHTML = `<div class="carousel__viewport"><div class="carousel__track">${lista.map((n) => {
-          const url = `noticia.html?id=${encodeURIComponent(n.id)}`;
-          return `<div class="carousel__slide">
-            <article class="hero-news__slide">
-              <a class="hero-news__media" href="${url}" tabindex="-1" aria-hidden="true">
-                <img src="${asset(n.imagem)}" alt="" width="800" height="500">
-                <span class="badge badge--light">${escapeHTML(n.categoria)}</span>
-              </a>
-              <div class="hero-news__body">
-                <time datetime="${escapeHTML(n.data)}"><i class="fa-regular fa-calendar" aria-hidden="true"></i> ${formatDate(n.data)}</time>
-                <h2 class="hero-news__title"><a href="${url}">${escapeHTML(n.titulo)}</a></h2>
-                <p class="hero-news__excerpt">${escapeHTML(n.resumo)}</p>
-                <a class="hero-news__more" href="${url}" aria-label="Leia mais: ${escapeHTML(n.titulo)}">Leia mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      const total = String(lista.length).padStart(2, '0');
+      stage.innerHTML = lista.length ? `
+        <div class="stage__slides" aria-live="off">
+          ${lista.map((n, i) => {
+            const url = `noticia.html?id=${encodeURIComponent(n.id)}`;
+            return `<article class="stage__slide" role="group" aria-roledescription="slide" aria-label="${i + 1} de ${lista.length}">
+              <img class="stage__backdrop" src="${asset(n.imagem)}" alt="" aria-hidden="true">
+              <div class="container stage__inner">
+                <div class="stage__text">
+                  <p class="stage__meta" style="--i:0"><span class="badge badge--light">${escapeHTML(n.categoria)}</span><time datetime="${escapeHTML(n.data)}">${formatDate(n.data)}</time></p>
+                  <h3 class="stage__title" style="--i:1"><a href="${url}">${escapeHTML(n.titulo)}</a></h3>
+                  <p class="stage__excerpt" style="--i:2">${escapeHTML(n.resumo)}</p>
+                  <div class="stage__cta" style="--i:3">
+                    <a class="btn btn--light btn--lg" href="${url}">Ler notícia <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+                <a class="stage__media" href="${url}" tabindex="-1" aria-hidden="true">
+                  <img src="${asset(n.imagem)}" alt="" width="800" height="500">
+                </a>
               </div>
-            </article>
-          </div>`;
-        }).join('')}</div></div>`;
-        new Carousel(heroNews, { autoplay: 5500 });
-      } else {
-        heroNews.closest('.hero-news').hidden = true;
-      }
-    }
-
-    // Cartões do hero: próximo evento e comunicado
-    const stack = qs('#hero-stack');
-    if (stack) {
-      const [ev] = await API.proximosEventos(1);
-      const [com] = await API.comunicadosAtivos();
-      const d = ev ? dateParts(ev.data) : null;
-      stack.innerHTML = `
-        ${ev ? `<a class="hero-stack__card hero-stack__card--event" href="eventos.html">
-          <span class="hero-stack__date"><b>${d.dia}</b>${d.mes}</span>
-          <span><small>Próximo evento</small><strong>${escapeHTML(ev.titulo)}</strong><em>${escapeHTML(Eventos.horario(ev))}</em></span></a>` : ''}
-        ${com ? `<a class="hero-stack__card hero-stack__card--notice" href="#comunicados">
-          <span class="hero-stack__icon hero-stack__icon--${escapeHTML(com.nivel)}"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span>
-          <span><small>Comunicado · ${escapeHTML(nivelInfo[com.nivel]?.nome || '')}</small><strong>${escapeHTML(com.titulo)}</strong></span></a>` : ''}`;
+            </article>`;
+          }).join('')}
+        </div>
+        <div class="stage__top">
+          <div class="container stage__top-inner">
+            <p class="stage__label"><span class="hero__pulse" aria-hidden="true"></span> Acontece na escola</p>
+            <p class="stage__counter" aria-hidden="true"><b>01</b> / ${total}</p>
+          </div>
+        </div>
+        <div class="stage__bottom">
+          <div class="container stage__bottom-inner">
+            <div class="stage__progress" role="group" aria-label="Escolher notícia">
+              ${lista.map((n, i) => `<button type="button" class="stage__seg" aria-label="Notícia ${i + 1}: ${escapeHTML(n.titulo)}"><em>${escapeHTML(n.titulo)}</em><span></span></button>`).join('')}
+            </div>
+            <div class="stage__controls">
+              <button type="button" class="stage__btn" data-stage="prev" aria-label="Notícia anterior"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+              <button type="button" class="stage__btn" data-stage="pause" aria-label="Pausar troca automática"><i class="fa-solid fa-pause" aria-hidden="true"></i></button>
+              <button type="button" class="stage__btn" data-stage="next" aria-label="Próxima notícia"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+              <a class="stage__all" href="noticias.html">Todas as notícias <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>`
+        : `<div class="stage__empty container"><i class="fa-regular fa-newspaper" aria-hidden="true"></i><p>Nenhuma notícia publicada ainda.</p></div>`;
+      if (lista.length) new StageCarousel(stage, { duration: 7000 });
     }
 
     await Promise.all([
@@ -112,7 +119,7 @@ const Pages = (() => {
       new Carousel(pc, { autoplay: 6500 });
     }
 
-    Hero3D.init(qs('#hero-3d'));
+    Hero3D.init(qs('#hero-3d'), { anchor: qs('#identity-seal') });
     Anim.init(document);
     Anim.heroIntro();
   }

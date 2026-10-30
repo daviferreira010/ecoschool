@@ -132,7 +132,7 @@ No Google Maps: **Compartilhar → Incorporar um mapa → copiar o `src` do ifra
 
 - Menu hambúrguer, header fixo, barra de progresso, botão "voltar ao topo"
 - Tema claro/escuro (segue o sistema; botão no topo)
-- Hero com cena 3D (Three.js) e carrossel "Acontece na escola" com as notícias mais recentes (passa sozinho, setas, pontos e swipe); animações de entrada com GSAP/ScrollTrigger
+- Topo da home em duas telas cheias sobre um fundo azul fixo: (1) identidade visual da escola (logo envolto por um globo 3D, nome, lema "Educando para o mundo!") e (2) carrossel "Acontece na escola" em tela cheia com as 5 notícias mais recentes (barra de progresso, pausar, setas, swipe e teclado); animações com GSAP/ScrollTrigger
 - Cards com inclinação 3D no mouse, carrossel acessível (setas, pontos, swipe, teclado)
 - Notícias com busca, filtros, destaques e página individual (`noticia.html?id=`)
 - Eventos com filtros, "adicionar à agenda" (.ics) e calendário mensal com legenda/filtro

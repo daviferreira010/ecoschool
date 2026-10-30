@@ -240,7 +240,9 @@ const Layout = (() => {
       bar.style.transform = `scaleX(${h > 0 ? Math.min(y / h, 1) : 0})`;
     }
     const top = qs('.back-to-top');
-    top && top.classList.toggle('is-visible', y > 600);
+    // na home, só aparece depois do topo em tela cheia (não cobre o carrossel)
+    const stage = qs('.home-stage');
+    top && top.classList.toggle('is-visible', y > Math.max(600, stage ? stage.offsetHeight - window.innerHeight * 0.5 : 0));
   }
 
   function init() {

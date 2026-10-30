@@ -107,7 +107,7 @@ Cada página HTML tem `<body data-page="...">`. O arquivo `js/main.js` usa esse 
 | Etapas de ensino e cursos | `js/data.js` → `ENSINO` |
 | Dados da LGPD (controlador, encarregado) | `js/data.js` → `SITE_CONFIG.lgpd` |
 | Mapa do Google | `js/data.js` → `SITE_CONFIG.contato.mapaEmbedURL` |
-| Cores do site (azul da logo `#0B24D8` + branco) | `css/style.css` → variáveis no início (`--c-primary`, `--c-accent`…) |
+| Cores do site (paleta de azuis `#dce3fe` → `#010f2e`) | `css/style.css` → início do arquivo: `--azul-50` … `--azul-900` |
 | Itens do menu | `js/menu.js` → `NAV_ITEMS` |
 | Textos fixos (história, missão…) | nos próprios arquivos `.html` (procure por `[INSERIR`) |
 

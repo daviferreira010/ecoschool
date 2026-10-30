@@ -25,9 +25,9 @@ const Hero3D = (() => {
     const s = getComputedStyle(document.documentElement);
     const read = (name, fb) => (s.getPropertyValue(name).trim() || fb);
     return {
-      primary: new THREE.Color(read('--c-hero-node', '#ffffff')),
-      accent: new THREE.Color(read('--c-hero-accent', '#b4c0ff')),
-      wave: new THREE.Color(read('--c-hero-wave', '#9aa9ff'))
+      primary: new THREE.Color(read('--c-hero-node', '#dce3fe')),
+      accent: new THREE.Color(read('--c-hero-accent', '#6891fb')),
+      wave: new THREE.Color(read('--c-hero-wave', '#6891fb'))
     };
   }
 
@@ -46,7 +46,7 @@ const Hero3D = (() => {
     renderer.domElement.setAttribute('aria-hidden', 'true');
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0x050f5e, 10, 26);
+    scene.fog = new THREE.Fog(0x010f2e, 10, 26);
     const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
     camera.position.set(0, 0.6, 9);
 

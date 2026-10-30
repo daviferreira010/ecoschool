@@ -11,60 +11,70 @@
    ===================================================================== */
 
 :root {
+  /* 🎨 PALETA OFICIAL DO SITE (do mais claro ao mais escuro)
+     Altere aqui para mudar o azul do site inteiro. */
+  --azul-50:  #dce3fe;
+  --azul-100: #a6b9fd;
+  --azul-300: #6891fb;
+  --azul-500: #186be7;
+  --azul-700: #0e4aa4;
+  --azul-800: #052b66;
+  --azul-900: #010f2e;
+
   /* Marca */
-  --c-primary: #0b24d8;          /* azul institucional (fundos de botões) */
-  --c-primary-strong: #0718a0;   /* azul profundo (hover, títulos de destaque) */
-  --c-primary-text: #0b24d8;     /* azul para textos/links */
-  --c-primary-soft: #e8ebfd;     /* azul claríssimo (fundos suaves) */
-  --c-accent: #2b47e8;           /* verde complementar */
-  --c-accent-text: #1530c9;
-  --c-accent-soft: #eef1ff;
+  --c-primary: var(--azul-500);          /* azul institucional (fundos de botões) */
+  --c-primary-strong: var(--azul-700);   /* azul profundo (hover, títulos de destaque) */
+  --c-primary-text: var(--azul-700);     /* azul para textos/links */
+  --c-primary-soft: var(--azul-50);     /* azul claríssimo (fundos suaves) */
+  --c-accent: var(--azul-700);           /* azul de apoio */
+  --c-accent-text: var(--azul-500);
+  --c-accent-soft: #eef2ff;
   --c-on-primary: #ffffff;
 
   /* Neutros com leve tom azulado */
-  --c-bg: #f5f6fc;
+  --c-bg: #f5f7ff;
   --c-surface: #ffffff;
-  --c-surface-2: #eef0fa;
-  --c-line: #d9def2;
-  --c-ink: #0a1240;              /* títulos */
-  --c-text: #262f52;             /* texto corrido */
-  --c-muted: #575f86;            /* textos secundários */
+  --c-surface-2: #edf1ff;
+  --c-line: #d2dbfd;
+  --c-ink: var(--azul-900);              /* títulos */
+  --c-text: var(--azul-800);             /* texto corrido */
+  --c-muted: #4c5f8a;            /* textos secundários */
 
   /* Hero e rodapé (sempre escuros, nos dois temas) */
-  --c-deep-1: #050f5e;
-  --c-deep-2: #0b24d8;
-  --c-on-deep: #f2f4ff;
-  --c-on-deep-muted: #c3cbf5;
-  --c-hero-node: #ffffff;
-  --c-hero-accent: #b4c0ff;
-  --c-hero-wave: #9aa9ff;
+  --c-deep-1: var(--azul-900);
+  --c-deep-2: var(--azul-800);
+  --c-on-deep: #f4f6ff;
+  --c-on-deep-muted: var(--azul-100);
+  --c-hero-node: var(--azul-50);
+  --c-hero-accent: var(--azul-300);
+  --c-hero-wave: var(--azul-300);
 
   /* Semânticas */
-  --c-success: #0b24d8;
+  --c-success: var(--azul-500);
   --c-warning: #9a5b00;
   --c-warning-soft: #fdf1dc;
   --c-danger: #c0362c;
   --c-danger-soft: #fde7e5;
-  --c-info: #0b24d8;
+  --c-info: var(--azul-500);
 
   /* Categorias de eventos / calendário */
-  --c-cat-academico: #0b24d8;
-  --c-cat-esportivo: #0a6fb8;
+  --c-cat-academico: var(--azul-500);
+  --c-cat-esportivo: var(--azul-700);
   --c-cat-cultural: #8a3ab9;
   --c-cat-reuniao: #b25d00;
-  --c-cat-comunicado: #5a6884;
-  --c-cat-projeto: #4a2fd0;
-  --c-cal-evento: #0b24d8;
+  --c-cat-comunicado: #4c5f8a;
+  --c-cat-projeto: var(--azul-800);
+  --c-cal-evento: var(--azul-500);
   --c-cal-prova: #c0362c;
   --c-cal-reuniao: #b25d00;
-  --c-cal-feriado: #0a6fb8;
+  --c-cal-feriado: var(--azul-700);
   --c-cal-atividade: #8a3ab9;
 
   /* Sombras */
-  --shadow-sm: 0 1px 2px rgba(11, 27, 54, .06), 0 1px 3px rgba(11, 27, 54, .06);
-  --shadow-md: 0 6px 18px -6px rgba(11, 27, 54, .14), 0 2px 6px rgba(11, 27, 54, .05);
-  --shadow-lg: 0 24px 48px -16px rgba(11, 27, 54, .25);
-  --overlay: rgba(4, 10, 50, .62);
+  --shadow-sm: 0 1px 2px rgba(1, 15, 46, .06), 0 1px 3px rgba(1, 15, 46, .06);
+  --shadow-md: 0 6px 18px -6px rgba(1, 15, 46, .14), 0 2px 6px rgba(1, 15, 46, .05);
+  --shadow-lg: 0 24px 48px -16px rgba(1, 15, 46, .25);
+  --overlay: rgba(1, 15, 46, .62);
 
   /* Tipografia */
   --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -96,84 +106,84 @@
 /* ---------- Tema escuro (sistema) ---------- */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --c-primary: #3550f2;
-    --c-primary-strong: #6f84ff;
-    --c-primary-text: #a3b2ff;
-    --c-primary-soft: #131c5e;
-    --c-accent: #3550f2;
-    --c-accent-text: #b9c4ff;
-    --c-accent-soft: #141e64;
-    --c-bg: #050a26;
-    --c-surface: #0b1238;
-    --c-surface-2: #111a4a;
-    --c-line: #232e68;
-    --c-ink: #eef0ff;
-    --c-text: #cfd5f2;
-    --c-muted: #99a2cc;
-    --c-deep-1: #030828;
-    --c-deep-2: #0a1a9e;
+    --c-primary: var(--azul-500);
+    --c-primary-strong: var(--azul-300);
+    --c-primary-text: var(--azul-300);
+    --c-primary-soft: var(--azul-800);
+    --c-accent: var(--azul-500);
+    --c-accent-text: var(--azul-100);
+    --c-accent-soft: var(--azul-800);
+    --c-bg: var(--azul-900);
+    --c-surface: #041f4d;
+    --c-surface-2: var(--azul-800);
+    --c-line: #0c3a7d;
+    --c-ink: #f4f6ff;
+    --c-text: var(--azul-50);
+    --c-muted: var(--azul-100);
+    --c-deep-1: var(--azul-900);
+    --c-deep-2: var(--azul-800);
     --c-warning: #f2b552;
     --c-warning-soft: #33260e;
     --c-danger: #ff8077;
     --c-danger-soft: #3a1714;
-    --c-info: #a3b2ff;
-    --c-cat-academico: #a3b2ff;
-    --c-cat-esportivo: #6cc4ff;
+    --c-info: var(--azul-300);
+    --c-cat-academico: var(--azul-300);
+    --c-cat-esportivo: var(--azul-100);
     --c-cat-cultural: #d39af5;
     --c-cat-reuniao: #f2b552;
-    --c-cat-comunicado: #a7b5cf;
-    --c-cat-projeto: #b9a6ff;
-    --c-cal-evento: #8c9dff;
+    --c-cat-comunicado: var(--azul-100);
+    --c-cat-projeto: var(--azul-50);
+    --c-cal-evento: var(--azul-300);
     --c-cal-prova: #ff8077;
     --c-cal-reuniao: #f2b552;
-    --c-cal-feriado: #6cc4ff;
+    --c-cal-feriado: var(--azul-100);
     --c-cal-atividade: #d39af5;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
     --shadow-md: 0 8px 20px -8px rgba(0, 0, 0, .6);
     --shadow-lg: 0 24px 48px -16px rgba(0, 0, 0, .7);
-    --overlay: rgba(0, 4, 14, .72);
+    --overlay: rgba(0, 6, 20, .72);
     color-scheme: dark;
   }
 }
 
 /* ---------- Tema escuro (escolhido no botão) ---------- */
 :root[data-theme="dark"] {
-  --c-primary: #3550f2;
-  --c-primary-strong: #6f84ff;
-  --c-primary-text: #a3b2ff;
-  --c-primary-soft: #131c5e;
-  --c-accent: #3550f2;
-  --c-accent-text: #b9c4ff;
-  --c-accent-soft: #141e64;
-  --c-bg: #050a26;
-  --c-surface: #0b1238;
-  --c-surface-2: #111a4a;
-  --c-line: #232e68;
-  --c-ink: #eef0ff;
-  --c-text: #cfd5f2;
-  --c-muted: #99a2cc;
-  --c-deep-1: #030828;
-  --c-deep-2: #0a1a9e;
+  --c-primary: var(--azul-500);
+  --c-primary-strong: var(--azul-300);
+  --c-primary-text: var(--azul-300);
+  --c-primary-soft: var(--azul-800);
+  --c-accent: var(--azul-500);
+  --c-accent-text: var(--azul-100);
+  --c-accent-soft: var(--azul-800);
+  --c-bg: var(--azul-900);
+  --c-surface: #041f4d;
+  --c-surface-2: var(--azul-800);
+  --c-line: #0c3a7d;
+  --c-ink: #f4f6ff;
+  --c-text: var(--azul-50);
+  --c-muted: var(--azul-100);
+  --c-deep-1: var(--azul-900);
+  --c-deep-2: var(--azul-800);
   --c-warning: #f2b552;
   --c-warning-soft: #33260e;
   --c-danger: #ff8077;
   --c-danger-soft: #3a1714;
-  --c-info: #a3b2ff;
-  --c-cat-academico: #a3b2ff;
-  --c-cat-esportivo: #6cc4ff;
+  --c-info: var(--azul-300);
+  --c-cat-academico: var(--azul-300);
+  --c-cat-esportivo: var(--azul-100);
   --c-cat-cultural: #d39af5;
   --c-cat-reuniao: #f2b552;
-  --c-cat-comunicado: #a7b5cf;
-  --c-cat-projeto: #b9a6ff;
-  --c-cal-evento: #8c9dff;
+  --c-cat-comunicado: var(--azul-100);
+  --c-cat-projeto: var(--azul-50);
+  --c-cal-evento: var(--azul-300);
   --c-cal-prova: #ff8077;
   --c-cal-reuniao: #f2b552;
-  --c-cal-feriado: #6cc4ff;
+  --c-cal-feriado: var(--azul-100);
   --c-cal-atividade: #d39af5;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
   --shadow-md: 0 8px 20px -8px rgba(0, 0, 0, .6);
   --shadow-lg: 0 24px 48px -16px rgba(0, 0, 0, .7);
-  --overlay: rgba(0, 4, 14, .72);
+  --overlay: rgba(0, 6, 20, .72);
   color-scheme: dark;
 }
 
@@ -281,8 +291,8 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--c-surf
 .btn--outline:hover { --btn-bg: var(--c-primary-soft); }
 .btn--ghost { --btn-bg: transparent; --btn-fg: var(--c-ink); --btn-bd: var(--c-line); }
 .btn--ghost:hover { --btn-bg: var(--c-surface-2); }
-.btn--light { --btn-bg: #ffffff; --btn-fg: #0b1b36; }
-.btn--light:hover { --btn-fg: #0b1b36; }
+.btn--light { --btn-bg: #ffffff; --btn-fg: #010f2e; }
+.btn--light:hover { --btn-fg: #010f2e; }
 .btn--glass { --btn-bg: rgba(255, 255, 255, .1); --btn-fg: #fff; --btn-bd: rgba(255, 255, 255, .35); backdrop-filter: blur(6px); }
 .btn--glass:hover { --btn-bg: rgba(255, 255, 255, .18); --btn-fg: #fff; }
 .btn--danger { --btn-bg: var(--c-danger); --btn-fg: #fff; }
@@ -317,7 +327,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--c-surf
   background: var(--c-primary-soft); color: var(--c-primary-text);
 }
 .badge--soft { background: var(--c-surface-2); color: var(--c-muted); }
-.badge--light { background: rgba(255, 255, 255, .92); color: #0b1b36; }
+.badge--light { background: rgba(255, 255, 255, .92); color: #010f2e; }
 .badge--cat-esportes, .badge--cat-projetos { background: var(--c-accent-soft); color: var(--c-accent-text); }
 .badge--cat-comunicados { background: var(--c-warning-soft); color: var(--c-warning); }
 .badge--cat-cultura { background: color-mix(in srgb, var(--c-cat-cultural) 14%, transparent); color: var(--c-cat-cultural); }
@@ -405,7 +415,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--c-surf
 }
 .page-hero::after {
   content: ""; position: absolute; right: -120px; bottom: -160px; width: 420px; height: 420px; z-index: -1;
-  border-radius: 50%; background: radial-gradient(circle, rgba(150, 168, 255, .3), transparent 65%);
+  border-radius: 50%; background: radial-gradient(circle, rgba(104, 145, 251, .3), transparent 65%);
 }
 .page-hero h1 { color: #fff; margin: 10px 0 12px; max-width: 18ch; }
 .page-hero p { color: var(--c-on-deep-muted); font-size: var(--fs-md); max-width: 60ch; margin: 0; }
@@ -510,13 +520,13 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--c-surf
 .lightbox {
   position: fixed; inset: 0; z-index: 1600; display: flex; align-items: center; justify-content: center; gap: 8px;
   padding: calc(56px + env(safe-area-inset-top, 0px)) max(8px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-left, 0px));
-  background: rgba(3, 9, 22, .94); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s;
+  background: rgba(1, 10, 30, .94); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s;
 }
 .lightbox.is-open { opacity: 1; visibility: visible; }
 .lightbox__figure { margin: 0; display: grid; gap: 12px; justify-items: center; max-width: min(1100px, 100%); min-width: 0; }
 .lightbox__img { max-height: 76vh; width: auto; border-radius: var(--radius); box-shadow: 0 30px 60px rgba(0, 0, 0, .5); object-fit: contain; }
-.lightbox__caption { color: #e8eefb; font-size: var(--fs-sm); text-align: center; }
-.lightbox__caption span { margin-left: 8px; font-family: var(--font-mono); color: #9fb0cc; }
+.lightbox__caption { color: #dce3fe; font-size: var(--fs-sm); text-align: center; }
+.lightbox__caption span { margin-left: 8px; font-family: var(--font-mono); color: #a6b9fd; }
 .lightbox__close, .lightbox__nav {
   display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; flex: none;
   border: 1px solid rgba(255, 255, 255, .25); background: rgba(255, 255, 255, .08); color: #fff; font-size: 1.1rem;
@@ -532,7 +542,7 @@ code { font-family: var(--font-mono); font-size: .88em; background: var(--c-surf
 .gallery-item__btn img { width: 100%; aspect-ratio: 4 / 3; transition: transform .6s var(--ease); }
 .gallery-item__overlay {
   position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: space-between; gap: 8px; padding: 12px;
-  background: linear-gradient(180deg, transparent 45%, rgba(6, 18, 40, .78)); color: #fff; font-size: var(--fs-xs); font-weight: 600;
+  background: linear-gradient(180deg, transparent 45%, rgba(1, 15, 46, .78)); color: #fff; font-size: var(--fs-xs); font-weight: 600;
   opacity: 0; transition: opacity .3s;
 }
 .gallery-item__btn:hover img, .gallery-item__btn:focus-visible img { transform: scale(1.07); }

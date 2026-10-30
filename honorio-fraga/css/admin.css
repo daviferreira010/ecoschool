@@ -9,7 +9,7 @@
 .admin-sidebar {
   position: fixed; inset: 0 auto 0 0; z-index: 1200; width: 270px; display: flex; flex-direction: column; gap: 20px;
   padding: calc(20px + env(safe-area-inset-top, 0px)) 16px calc(20px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
-  background: linear-gradient(180deg, var(--c-deep-1), #0a1a9e); color: var(--c-on-deep-muted); overflow-y: auto;
+  background: linear-gradient(180deg, var(--c-deep-1), #052b66); color: var(--c-on-deep-muted); overflow-y: auto;
   transform: translateX(-105%); transition: transform .35s var(--ease);
 }
 .admin-sidebar.is-open { transform: none; box-shadow: var(--shadow-lg); }

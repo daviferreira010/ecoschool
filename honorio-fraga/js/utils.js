@@ -151,7 +151,7 @@ const Utils = (() => {
      com o texto "Imagem indisponível". O site continua funcionando. */
   function placeholderSVG(label = 'Imagem indisponível') {
     const text = escapeHTML(label);
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#050f5e"/><stop offset="1" stop-color="#0b24d8"/></linearGradient></defs><rect width="800" height="500" fill="url(#g)"/><g fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="10"><rect x="330" y="170" width="140" height="110" rx="12"/><circle cx="370" cy="205" r="14"/><path d="M340 270l45-45 30 30 20-20 25 35"/></g><text x="400" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#ffffff" fill-opacity=".85">${text}</text></svg>`;
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#052b66"/><stop offset="1" stop-color="#186be7"/></linearGradient></defs><rect width="800" height="500" fill="url(#g)"/><g fill="none" stroke="#ffffff" stroke-opacity=".35" stroke-width="10"><rect x="330" y="170" width="140" height="110" rx="12"/><circle cx="370" cy="205" r="14"/><path d="M340 270l45-45 30 30 20-20 25 35"/></g><text x="400" y="330" text-anchor="middle" font-family="Arial,sans-serif" font-size="26" fill="#ffffff" fill-opacity=".85">${text}</text></svg>`;
     return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
   }
 

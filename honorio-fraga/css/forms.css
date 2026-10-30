@@ -105,7 +105,7 @@
 .login { display: grid; grid-template-columns: 1fr; min-height: 100%; }
 .login__aside {
   position: relative; overflow: hidden; isolation: isolate; color: var(--c-on-deep); padding: 40px var(--gutter-r) 40px var(--gutter-l);
-  background: radial-gradient(120% 120% at 0% 100%, #0b24d8 0%, transparent 50%), linear-gradient(140deg, var(--c-deep-1), var(--c-deep-2));
+  background: radial-gradient(120% 120% at 0% 100%, #186be7 0%, transparent 50%), linear-gradient(140deg, var(--c-deep-1), var(--c-deep-2));
   display: none;
 }
 .login__aside h2 { color: #fff; font-size: var(--fs-2xl); max-width: 14ch; }

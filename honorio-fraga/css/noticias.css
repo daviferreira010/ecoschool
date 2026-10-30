@@ -43,7 +43,7 @@
 .highlights { margin-bottom: 48px; }
 .highlight { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; display: flex; align-items: flex-end; color: #fff; isolation: isolate; }
 .highlight__img { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -2; }
-.highlight::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(6, 18, 40, .1) 10%, rgba(6, 18, 40, .92) 90%); }
+.highlight::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(1, 15, 46, .1) 10%, rgba(1, 15, 46, .92) 90%); }
 .highlight__body { padding: clamp(20px, 4vw, 40px); display: grid; gap: 10px; max-width: 760px; }
 .highlight__title { color: #fff; margin: 0; font-size: var(--fs-xl); }
 .highlight__title a { color: #fff; text-decoration: none; }
